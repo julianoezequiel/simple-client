@@ -13,7 +13,7 @@ var gutil = require('gulp-util');
  */
 exports.paths = {
     src : 'src',
-    dist: '../server/src/main/resources/static',
+    dist: '../simple-serve/src/main/resources/static',
     tmp : '.tmp',
     e2e : 'e2e'
 };
