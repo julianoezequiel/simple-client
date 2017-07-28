@@ -23,6 +23,7 @@
             // Apps
             'app.dashboards',
             'app.pages.auth.login',
+            'app.simple',
 
             //itens adicionais
             'ngStorage'

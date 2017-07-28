@@ -71,6 +71,7 @@
         vm.changeLanguage = changeLanguage;
         vm.setUserStatus = setUserStatus;
         vm.toggleHorizontalMobileMenu = toggleHorizontalMobileMenu;
+        vm.abrirConfiguracoes = abrirConfiguracoes;
 
         //////////
 
@@ -86,6 +87,8 @@
 
             // Get the selected language directly from angular-translate module setting
             vm.selectedLanguage = vm.languages[$translate.preferredLanguage()];
+            
+            vm.usuario = $rootScope.user;
         }
 
 
@@ -113,7 +116,11 @@
          */
         function logout()
         {
-            // Do logout here..
+            delete $rootScope.authToken;
+            delete $rootScope.user;
+            delete $rootScope.autenticado;
+            $rootScope.$sessionStorage.$reset();
+            $rootScope.state.go("app.pages_auth_login");
         }
 
         /**
@@ -159,6 +166,10 @@
         function toggleHorizontalMobileMenu()
         {
             vm.bodyEl.toggleClass('ms-navigation-horizontal-mobile-menu-active');
+        }
+
+        function abrirConfiguracoes(){
+            $rootScope.state.go('app.');
         }
     }
 
