@@ -7,7 +7,7 @@
         .controller('LoginController', LoginController);
 
     /** @ngInject */
-    function LoginController($rootScope,loginService,$mdToast)
+    function LoginController($rootScope,loginService,$mdToast,api)
     {
         var vm = this;
         // Data
@@ -16,39 +16,42 @@
         vm.login = function(){
             console.log("Login");
 
-            if(vm.form.email !== 'julianoezequiel@gmail.com' && vm.form.password !== 'admin'){
-                erroLogin()
-            }else{
-                $rootScope.state.go("app.dashboards_project");
-            }
+            // if(vm.form.email !== 'julianoezequiel@gmail.com' && vm.form.password !== 'admin'){
+            //     erroLogin()
+            // }else{
+            //     $rootScope.state.go("app.dashboards_project");
+            // }
+            var user = new Object();
+            user.email = vm.form.email;
+            user.senha = vm.form.password;
+            loginService.Auth.save(user,function(response){
+                 var authToken = response.token;
+                    $rootScope.authToken = authToken;
+                    $rootScope.$sessionStorage.authToken = authToken;
+                    //recebe o usuario autenticado
+                    loginService.User.get(function (user) {
+                        $rootScope.user = user;
+                        $rootScope.autenticado = true;
+                    });
 
-            // loginService.Auth.authenticate({
-            //         username: vm.form.email, 
-            //         password: vm.form.password
-            //     }, function (response) {
-            //         var authToken = response.token;
-            //         $rootScope.authToken = authToken;
-            //         $rootScope.$storage.authToken = authToken;
-            //         //recebe o usuario autenticado
-            //         loginService.Auth.get(function (user) {
-            //             $rootScope.user = user;
-            //             $rootScope.autenticado = true;
-            //         });
-
-            //     }, function (error) {
-            //         erroLogin();
-            //         if (error.status == 303) {
-            //             $rootScope.username = vm.username;
-            //             $rootScope.$state.go('AlterarSenha', {id: error.data.entidade.idOperador});
-            //         }
-            // });
+                    $rootScope.state.go("app.dashboards_project");
+            }, function (error) {
+                    if(error.status == 401){
+                        if(error.data && error.data.message){
+                            erroLogin(error.data.message); 
+                        }
+                    }else  if (error.status == 303) {
+                        $rootScope.username = vm.username;
+                        $rootScope.$state.go('AlterarSenha', {id: error.data.entidade.idOperador});
+                    }
+            });            
 
             //redireciona para a dash
             // $rootScope.state.go("app.dashboards_project");
         }
 
-        var erroLogin = function(){
-            var message = 'Usuário ou senha inválido';
+        var erroLogin = function(message){
+           
             console.log('erro login');
 
             $mdToast.show(

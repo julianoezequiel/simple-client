@@ -13,9 +13,11 @@
         console.log('URL Base ' + api.baseUrl);
         
         var _auth = api.login.Auth;
+        var _user = api.login.User;
 
         return {
             Auth: _auth,
+            User:_user
         }
 
         //////////

@@ -46,14 +46,14 @@
                     $rootScope.user = user;
                     $rootScope.autenticado = true;
                 }, function (error) {
-                    $location.path("/pages/auth/login");
+                    $location.path("/login");
                     $rootScope.autenticado = false;
                     delete $rootScope.user;
                     delete $rootScope.authToken;
                     $rootScope.$storage.$reset();
             });
         }else{
-            $location.path("/pages/auth/login");
+            $location.path("/login");
             $rootScope.autenticado = false;
             delete $rootScope.user;
             delete $rootScope.authToken;

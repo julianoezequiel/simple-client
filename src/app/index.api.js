@@ -178,18 +178,14 @@
         var api = {};
 
         // Base Url
-        api.baseUrl = 'localhost:3000/';
+        api.baseUrl = 'http://localhost:80/';
 
         api.login = {
-          Auth :  $resource(api.baseUrl + 'rest/user/:action', {}, {
-               authenticate: {
-                   method: 'POST',
-                   params: {
-                       'action': 'auth'
-                   },
-               }
-           })
+          Auth :  $resource(api.baseUrl + 'auth'),
+          User :  $resource(api.baseUrl + 'restrict/usuario')
         }
+
+
 
         /**
          * Here you can find all the definitions that the Demo Project requires
