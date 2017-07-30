@@ -3,14 +3,14 @@
     'use strict';
 
     angular
-        .module('app.dashboards', [
-            'app.dashboards.project'
-        ])
         // .module('app.dashboards', [
-        //     'app.dashboards.project',
-        //     'app.dashboards.server',
-        //     'app.dashboards.analytics'
+        //     'app.dashboards.project'
         // ])
+        .module('app.dashboards', [
+            'app.dashboards.project',
+            'app.dashboards.server',
+            'app.dashboards.analytics'
+        ])
         .config(config);
 
     /** @ngInject */

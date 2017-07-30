@@ -7,7 +7,7 @@
         .factory("loginInterceptor",function($q, $rootScope){
         	return {
 		        responseError: function(rejection) {
-		        	console.log('Interceptor login');
+		        	console.log('loginInterceptor');
 		            if (rejection.config.url.indexOf('/user') > -1 ||
 		                rejection.config.url.indexOf('/confirmacao') > -1) {
 		                if (rejection.status == 500 || rejection.status == 0 || rejection.status == 404) {

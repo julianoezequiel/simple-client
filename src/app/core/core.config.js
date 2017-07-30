@@ -29,7 +29,7 @@
         $translateProvider.useLoader('$translatePartialLoader', {
             urlTemplate: '{part}/i18n/{lang}.json'
         });
-        $translateProvider.preferredLanguage('br');
+        $translateProvider.preferredLanguage('en');
         $translateProvider.useSanitizeValueStrategy('sanitize');
 
         // Text Angular options

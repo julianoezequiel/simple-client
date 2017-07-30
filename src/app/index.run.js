@@ -7,7 +7,7 @@
         .run(runBlock);
 
     /** @ngInject */
-    function runBlock($rootScope, $timeout, $state,$sessionStorage,$localStorage,$location)
+    function runBlock($rootScope, $timeout, $state,$sessionStorage,$localStorage,$location,loginService)
     {
         // Activate loading indicator
         var stateChangeStartEvent = $rootScope.$on('$stateChangeStart', function ()
@@ -38,26 +38,26 @@
         $rootScope.$sessionStorage = $sessionStorage;
         $rootScope.$localStorage = $localStorage;
 
-        var authToken = $rootScope.$sessionStorage.authToken; 
-        if (authToken != "" && authToken != undefined) {
-            $rootScope.authToken = authToken;
-            loginService.Auth.get(
-                function (user) {
-                    $rootScope.user = user;
-                    $rootScope.autenticado = true;
-                }, function (error) {
-                    $location.path("/login");
-                    $rootScope.autenticado = false;
-                    delete $rootScope.user;
-                    delete $rootScope.authToken;
-                    $rootScope.$storage.$reset();
-            });
-        }else{
-            $location.path("/login");
-            $rootScope.autenticado = false;
-            delete $rootScope.user;
-            delete $rootScope.authToken;
-            $rootScope.$sessionStorage.$reset();
-        }
+        // var authToken = $rootScope.$sessionStorage.authToken; 
+        // if (authToken != "" && authToken != undefined) {
+        //     $rootScope.authToken = authToken;
+        //     loginService.User.get(
+        //         function (user) {
+        //             $rootScope.user = user;
+        //             $rootScope.autenticado = true;
+        //         }, function (error) {
+        //             $location.path("/login");
+        //             $rootScope.autenticado = false;
+        //             delete $rootScope.user;
+        //             delete $rootScope.authToken;
+        //             $rootScope.$sessionStorage.$reset();
+        //     });
+        // }else{
+        //     $location.path("/login");
+        //     $rootScope.autenticado = false;
+        //     delete $rootScope.user;
+        //     delete $rootScope.authToken;
+        //     $rootScope.$sessionStorage.$reset();
+        // }
     }
 })();

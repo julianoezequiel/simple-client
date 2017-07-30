@@ -7,7 +7,7 @@
         .factory('api', apiService);
 
     /** @ngInject */
-    function apiService($resource)
+    function apiService($resource,$rootScope)
     {
         /**
          * You can use this service to define your API urls. The "api" service
@@ -179,6 +179,8 @@
 
         // Base Url
         api.baseUrl = 'http://localhost:80/';
+        $rootScope.baseUrl = api.baseUrl;
+
 
         api.login = {
           Auth :  $resource(api.baseUrl + 'auth'),

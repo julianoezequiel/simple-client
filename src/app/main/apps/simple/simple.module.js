@@ -4,7 +4,9 @@
 
     angular
         .module('app.simple', [
-             'app.configuracoes'
+             'app.configuracoes',
+             'app.simple.painel-controle'
+
         ])
         // .module('app.dashboards', [
         //     'app.dashboards.project',
@@ -17,11 +19,11 @@
     function config(msNavigationServiceProvider)
     {
 
-        msNavigationServiceProvider.saveItem('simple.empresas', {
-            title : 'Painel de Controle',
-            icon  : 'icon-tile-four',
-            weight: 1
-        });
+        // msNavigationServiceProvider.saveItem('simple', {
+        //     title : 'Painel de Controle',
+        //     icon  : 'icon-tile-four',
+        //     weight: 1
+        // });
 
         // msNavigationServiceProvider.saveItem('apps.dashboards.project', {
         //     title: 'Project',

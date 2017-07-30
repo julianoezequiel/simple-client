@@ -33,8 +33,8 @@
         ]);
 
         // Get active layout
-        // var layoutStyle = $cookies.get('layoutStyle') || 'verticalNavigation';
-        var layoutStyle = 'verticalNavigation';
+        var layoutStyle = $cookies.get('layoutStyle') || 'verticalNavigation';
+        // var layoutStyle = 'verticalNavigation';
         var layouts = {
             verticalNavigation  : {
                 main      : 'app/core/layouts/vertical-navigation.html',

@@ -19,32 +19,36 @@
             // if(vm.form.email !== 'julianoezequiel@gmail.com' && vm.form.password !== 'admin'){
             //     erroLogin()
             // }else{
-            //     $rootScope.state.go("app.dashboards_project");
+                $rootScope.state.go("app.simple_painel-controle");
+
             // }
             var user = new Object();
             user.email = vm.form.email;
             user.senha = vm.form.password;
-            loginService.Auth.save(user,function(response){
-                 var authToken = response.token;
-                    $rootScope.authToken = authToken;
-                    $rootScope.$sessionStorage.authToken = authToken;
-                    //recebe o usuario autenticado
-                    loginService.User.get(function (user) {
-                        $rootScope.user = user;
-                        $rootScope.autenticado = true;
-                    });
+            $rootScope.user =user;
 
-                    $rootScope.state.go("app.dashboards_project");
-            }, function (error) {
-                    if(error.status == 401){
-                        if(error.data && error.data.message){
-                            erroLogin(error.data.message); 
-                        }
-                    }else  if (error.status == 303) {
-                        $rootScope.username = vm.username;
-                        $rootScope.$state.go('AlterarSenha', {id: error.data.entidade.idOperador});
-                    }
-            });            
+            // loginService.Auth.save(user,function(response){
+            //      var authToken = response.token;
+            //         $rootScope.authToken = authToken;
+            //         $rootScope.$sessionStorage.authToken = authToken;
+            //         //recebe o usuario autenticado
+            //         loginService.User.get(function (user) {
+            //             $rootScope.user = user;
+            //             $rootScope.autenticado = true;
+            //             $rootScope.state.go("app.dashboards_project");
+            //         });
+
+                    
+            // }, function (error) {
+            //         if(error.status == 401){
+            //             if(error.data && error.data.message){
+            //                 erroLogin(error.data.message); 
+            //             }
+            //         }else  if (error.status == 303) {
+            //             $rootScope.username = vm.username;
+            //             $rootScope.$state.go('AlterarSenha', {id: error.data.entidade.idOperador});
+            //         }
+            // });            
 
             //redireciona para a dash
             // $rootScope.state.go("app.dashboards_project");

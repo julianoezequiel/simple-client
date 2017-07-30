@@ -1,0 +1,68 @@
+cadastros ->
+
+Bancos 
+Clientes
+Empresas
+Fornecedores
+Tributos
+
+Administrativo ->
+financeiro -> 
+Compras -> Entrada Mercadoria
+Contas a pagar 
+Contas a receber
+Fluxo de caixa
+Conta financeira
+
+
+Configuracões ->
+cadastros basicos ->
+Cargo
+CFOP - Natureza da operação
+Contas bancarias
+Cores
+Departamentos
+espessuras do material
+Estado civil
+Forma de pagamento
+Grau de instrução
+Grupos
+Marcas
+NCM
+Raça
+Sub-Grupos
+Tipo de serviço
+Tributos
+Unidade de medida
+
+
+
+geral ->
+
+Entrada produtos
+Ajuste de estoque
+Etiquetas
+Contas a pagar
+Contas a receber
+Conta corrente do cliente
+movimentação diaria
+caixa
+agrupar itens
+inventario
+
+
+relatorios ->
+rel. estoque
+ofertas
+estoque valorizado
+30 dias sem venda
+produtos cadastrado
+conta correne do cliente
+entrada produtos
+comandas
+validades
+comissoes
+gerenciar notas fiscais
+estoque minimo
+Relatorio de ajustes
+

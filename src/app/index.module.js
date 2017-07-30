@@ -26,21 +26,21 @@
             'app.simple',
 
             //itens adicionais
-            'ngStorage'
-            // 'app.calendar',
-            // 'app.mail',
-            // 'app.file-manager',
-            // 'app.scrumboard',
-            // 'app.gantt-chart',
-            // 'app.todo',
+            'ngStorage',
+            'app.calendar',
+            'app.mail',
+            'app.file-manager',
+            'app.scrumboard',
+            'app.gantt-chart',
+            'app.todo',
 
             // Pages
-            // 'app.pages',
+            'app.pages',
 
             // User Interface
-            // 'app.ui',
+            'app.ui',
 
             // Components
-            // 'app.components'
+            'app.components'
         ]);
 })();
