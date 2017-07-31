@@ -3,10 +3,7 @@
     'use strict';
 
     angular
-        .module('app.simple', [
-             'app.simple.admin',
-             'app.simple.clientes'
-
+        .module('app.simple.cadastros', [
         ])
         .config(config);
 

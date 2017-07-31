@@ -3,9 +3,9 @@
     'use strict';
 
     angular
-        .module('app.simple', [
-             'app.simple.admin',
-             'app.simple.clientes'
+        .module('app.simple.admin', [
+             'app.configuracoes',
+             'app.simple.painel-controle'
 
         ])
         .config(config);

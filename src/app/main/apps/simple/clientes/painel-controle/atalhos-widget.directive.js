@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.simple.painel-controle')
+        .module('app.simple-cliente.painel-controle')
         .directive('atalhoWidget', atalhoWidget);
 
         function atalhoWidget(){

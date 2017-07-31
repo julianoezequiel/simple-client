@@ -1,12 +1,10 @@
-(function ()
+ (function ()
 {
     'use strict';
 
     angular
-        .module('app.simple', [
-             'app.simple.admin',
-             'app.simple.clientes'
-
+        .module('app.configuracoes', [
+            'app.configuracoes.sistema'
         ])
         .config(config);
 
@@ -14,7 +12,7 @@
     function config(msNavigationServiceProvider)
     {
 
-        // msNavigationServiceProvider.saveItem('simple', {
+        // msNavigationServiceProvider.saveItem('simple.empresas', {
         //     title : 'Painel de Controle',
         //     icon  : 'icon-tile-four',
         //     weight: 1

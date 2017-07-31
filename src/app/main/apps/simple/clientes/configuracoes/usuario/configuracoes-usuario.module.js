@@ -3,15 +3,24 @@
     'use strict';
 
     angular
-        .module('app.configuracoes', [
-            'app.configuracoes.sistema',
-            'app.configuracoes.usuario'    
-        ])
+        .module('app.configuracoes-cliente.usuario', [])
         .config(config);
 
     /** @ngInject */
-    function config(msNavigationServiceProvider)
-    {
+    function config($stateProvider, $translatePartialLoaderProvider,msNavigationServiceProvider){   
+        
+        // State
+        $stateProvider.state('app.configuracoes-cliente.usuario', {
+            url      : '/configuracoes/usuario',
+            views    : {
+                'content@app.configuracoes.usuario': {
+                    templateUrl: 'app/main/simple/configuracoes/usuario/configuracoes-usuario.template.html',
+                    controller : 'ConfiguracoesController as vm'
+                }
+            },
+            bodyClass: 'configuracoes-usuario'
+        });
+
 
         // msNavigationServiceProvider.saveItem('simple.empresas', {
         //     title : 'Painel de Controle',
