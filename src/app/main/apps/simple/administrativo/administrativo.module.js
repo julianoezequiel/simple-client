@@ -1,16 +1,19 @@
- (function ()
+(function ()
 {
     'use strict';
 
     angular
-        .module('app.configuracoes-cliente.sistema', [])
+        .module('app.simple.administrativo', [
+             'app.simple.financeiro'
+
+        ])
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider,msNavigationServiceProvider)
+    function config(msNavigationServiceProvider)
     {
 
-        // msNavigationServiceProvider.saveItem('simple.empresas', {
+        // msNavigationServiceProvider.saveItem('simple', {
         //     title : 'Painel de Controle',
         //     icon  : 'icon-tile-four',
         //     weight: 1

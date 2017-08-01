@@ -3,9 +3,7 @@
     'use strict';
 
     angular
-        .module('app.simple.clientes', [
-             'app.configuracoes-cliente',
-             'app.simple-cliente.painel-controle'
+        .module('app.cadastros.usuarios', [
 
         ])
         .config(config);
@@ -20,10 +18,10 @@
         //     weight: 1
         // });
 
-        // msNavigationServiceProvider.saveItem('apps.dashboards.project', {
-        //     title: 'Project',
-        //     state: 'app.dashboards_project'
-        // });
+        msNavigationServiceProvider.saveItem('cadastros.usuarios', {
+            title: 'Usuários',
+            state: 'app.dashboards_project'
+        });
 
         // msNavigationServiceProvider.saveItem('apps.dashboards.server', {
         //     title: 'Server',

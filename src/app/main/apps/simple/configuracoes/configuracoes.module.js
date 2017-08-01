@@ -3,8 +3,9 @@
     'use strict';
 
     angular
-        .module('app.configuracoes', [
-            'app.configuracoes.sistema'
+        .module('app.simple.configuracoes', [
+            'app.configuracoes.sistema',
+            'app.configuracoes.usuario'    
         ])
         .config(config);
 

@@ -12,7 +12,7 @@
     {
 
 
-// State
+        // State
         $stateProvider.state('app.simple_painel-controle', {
             url      : '/painel-controle',
             views    : {

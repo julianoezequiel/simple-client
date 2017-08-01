@@ -4,9 +4,11 @@
 
     angular
         .module('app.simple', [
-             'app.simple.admin',
-             'app.simple.clientes'
-
+             'app.simple.painel-controle',
+             'app.simple.cadastros',
+             'app.simple.administrativo',
+             'app.simple.configuracoes',
+             'app.simple.relatorio'
         ])
         .config(config);
 

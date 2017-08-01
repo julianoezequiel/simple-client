@@ -21,9 +21,9 @@
             'app.quick-panel',
 
             // Apps
+            'app.simple',
             'app.dashboards',
             'app.pages.auth.login',
-            'app.simple',
 
             //itens adicionais
             'ngStorage',

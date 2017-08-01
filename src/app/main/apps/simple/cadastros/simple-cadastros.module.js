@@ -4,6 +4,10 @@
 
     angular
         .module('app.simple.cadastros', [
+           'app.cadastros.clientes',
+           'app.cadastros.empresas',
+           'app.cadastros.produtos',
+           'app.cadastros.usuarios'
         ])
         .config(config);
 
@@ -11,11 +15,11 @@
     function config(msNavigationServiceProvider)
     {
 
-        // msNavigationServiceProvider.saveItem('simple', {
-        //     title : 'Painel de Controle',
-        //     icon  : 'icon-tile-four',
-        //     weight: 1
-        // });
+        msNavigationServiceProvider.saveItem('cadastros', {
+            title : 'Cadastros',
+            icon  : 'icon-tile-four',
+            weight: 1
+        });
 
         // msNavigationServiceProvider.saveItem('apps.dashboards.project', {
         //     title: 'Project',

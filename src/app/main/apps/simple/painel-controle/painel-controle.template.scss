@@ -37,6 +37,7 @@
 
                     span {
                         cursor: pointer;
+                        background-color : transparent;
 
                         md-icon {
                             cursor: default;
@@ -104,6 +105,11 @@
                     }
                 }
             }
+
+            ms-widget-front{
+              cursor:pointer;
+            }
+             
         }
         }
 

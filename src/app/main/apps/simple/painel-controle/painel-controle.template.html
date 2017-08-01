@@ -33,22 +33,12 @@
                     <!-- WIDGET GROUP -->
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
-                    <ms-widget style="height: 150px" data-ng-repeat="atalho in vm.atalhos" flippable="true" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+                    <ms-widget style="height: 150px" data-ng-repeat="atalho in vm.atalhos" flippable="false" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg" ng-click="flipWidget()" >
-                                <div class="ph-8 pv-16 h-55" layout="row" layout-align="space-between center">
-                                    <div class="flip-to-front">
-	                                    <md-button class="md-icon-button" ng-click="flipWidget()"
-	                                               aria-label="Flip widget">
-	                                        <md-icon md-font-icon="icon-close" class="s16"></md-icon>
-	                                    </md-button>
-                                	</div>
-                                </div>
-
-                                <div class="pb-50" layout="column" layout-align="center center">
-                                <!-- <md-icon md-font-icon="{{}}" class="s60"></md-icon> -->
-                                	<i class="icon icon-{{::atalho.icone}} s60"></i>
+                            <ms-widget-front class="white-bg" ng-click="vm.redirecionar(atalho.state)" >
+                               <div class="pt-25" layout="column" layout-align="center center">
+                                 	<i class="icon icon-{{::atalho.icone}} s60"></i>
                                 
                                     <div class="light-blue-fg font-size-20 line-height-20">
                                         {{atalho.descricao}}
@@ -57,21 +47,6 @@
                                 </div>
                             </ms-widget-front>
                             <!-- / Front -->
-
-                            <!-- Back -->
-                            <ms-widget-back class="p-16 white-bg">
-                                <div class="flip-to-front">
-                                    <md-button class="md-icon-button" ng-click="flipWidget()"
-                                               aria-label="Flip widget">
-                                        <md-icon md-font-icon="icon-close" class="s16"></md-icon>
-                                    </md-button>
-                                </div>
-
-                                <div>
-                                    {{vm.widget1.detail}}
-                                </div>
-                            </ms-widget-back>
-                            <!-- / Back -->
 
                         </ms-widget>
                         <!-- / WIDGET 1 -->

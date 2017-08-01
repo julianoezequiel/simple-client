@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.simple-cadastros.empresas', [
+        .module('app.cadastros.empresas', [
 
         ])
         .config(config);
@@ -18,10 +18,10 @@
         //     weight: 1
         // });
 
-        // msNavigationServiceProvider.saveItem('apps.dashboards.project', {
-        //     title: 'Project',
-        //     state: 'app.dashboards_project'
-        // });
+        msNavigationServiceProvider.saveItem('cadastros.empresas', {
+            title: 'Empresas',
+            state: 'app.dashboards_project'
+        });
 
         // msNavigationServiceProvider.saveItem('apps.dashboards.server', {
         //     title: 'Server',

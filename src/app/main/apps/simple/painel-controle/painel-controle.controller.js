@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.simple-cliente.painel-controle')
+        .module('app.simple.painel-controle')
         .controller('PainelController', PainelController);
 
     /** @ngInject */
@@ -15,18 +15,28 @@
 
         vm.atalhos = [{
             "descricao":"Usuários",
-            "icone":"account-circle"
+            "icone":"account-circle",
+            "state": 'app.simple-cadastros-clientes',
         },{
             "descricao":"Clientes",
-            "icone":"cart"
+            "icone":"cart",
+            "state": 'app.simple-cadastros-clientes',
         },{
             "descricao":"Fornecedores",
-            "icone":"truck"
+            "icone":"truck",
+            "state": 'app.simple-cadastros-clientes',
         },{
             "descricao":"Vendedores",
-            "icone":"wallet-travel"
+            "icone":"wallet-travel",
+            "state": 'app.simple-cadastros-clientes',
         }]
 
+        vm.redirecionar = function(state){
+            console.log('redirecionar ' + state);
+            if(state){
+               $rootScope.state.go(state);
+            }
+        }
         vm.dashboardData = DashboardData;
         
         vm.weatherWidget = vm.dashboardData.weatherWidget;
