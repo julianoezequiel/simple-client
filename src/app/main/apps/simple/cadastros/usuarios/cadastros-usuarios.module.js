@@ -4,34 +4,41 @@
 
     angular
         .module('app.cadastros.usuarios', [
-
         ])
         .config(config);
 
     /** @ngInject */
-    function config(msNavigationServiceProvider)
+    function config(msNavigationServiceProvider,$stateProvider,msApiProvider)
     {
 
-        // msNavigationServiceProvider.saveItem('simple', {
-        //     title : 'Painel de Controle',
-        //     icon  : 'icon-tile-four',
-        //     weight: 1
-        // });
+        // State
+        $stateProvider.state('app.simple-cadastros-usuarios', {
+            url      : '/cadastros/usuarios',
+            views    : {
+               'content@app': {
+                    templateUrl: 'app/main/apps/simple/cadastros/usuarios/cadastros-usuarios.template.html',
+                    controller : 'UsuariosController as vm'
+                }
+            },
+             resolve: {
+                Employees: function (msApi)
+                {
+                    return msApi.resolve('tables.employees100@get');
+                }
+            },
+            bodyClass: 'cadastros-usuarios'
+        });
 
         msNavigationServiceProvider.saveItem('cadastros.usuarios', {
             title: 'Usuários',
-            state: 'app.dashboards_project'
+            state: 'app.simple-cadastros-usuarios',
+             icon : 'icon-account-circle'
         });
 
-        // msNavigationServiceProvider.saveItem('apps.dashboards.server', {
-        //     title: 'Server',
-        //     state: 'app.dashboards_server'
-        // });
+        // Api
+        
+        msApiProvider.register('tables.employees100', ['app/data/tables/employees100.json']);
 
-        // msNavigationServiceProvider.saveItem('apps.dashboards.analytics', {
-        //     title: 'Analytics',
-        //     state: 'app.dashboards_analytics'
-        // });
     }
 
 })();

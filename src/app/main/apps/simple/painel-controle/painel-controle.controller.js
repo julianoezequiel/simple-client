@@ -16,7 +16,7 @@
         vm.atalhos = [{
             "descricao":"Usuários",
             "icone":"account-circle",
-            "state": 'app.simple-cadastros-clientes',
+            "state": 'app.simple-cadastros-usuarios',
         },{
             "descricao":"Clientes",
             "icone":"cart",
