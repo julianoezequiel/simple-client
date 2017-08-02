@@ -8,7 +8,7 @@
         .config(config);
 
     /** @ngInject */
-    function config(msNavigationServiceProvider,$stateProvider,msApiProvider)
+    function config(msNavigationServiceProvider,$stateProvider,msApiProvider,$stateParams)
     {
 
         // State
@@ -21,9 +21,30 @@
                 }
             },
              resolve: {
-                Employees: function (msApi)
+                Usuarios: function (msApi)
                 {
-                    return msApi.resolve('tables.employees100@get');
+                    return msApi.resolve('tables.usuarios@get');
+                }
+            },
+            bodyClass: 'cadastros-usuarios'
+        });
+
+         // State
+        $stateProvider.state('app.simple-cadastros-gerenciamento', {
+            url      : '/cadastros/usuarios/gerenciamento/:id',
+            views    : {
+               'content@app': {
+                    templateUrl: 'app/main/apps/simple/cadastros/usuarios/cadastros-usuarios-gerenciamento.template.html',
+                    controller : 'UsuarioGerenciamentoController as vm'
+                }
+            },
+             resolve: {
+                Usuario: function (msApi,$stateParams)
+                {   
+                    var usuarios =  msApi.resolve('tables.usuarios@get');
+                    return usuarios.filter(function(u){
+                       return u.id == $stateParams.id;
+                    });
                 }
             },
             bodyClass: 'cadastros-usuarios'
@@ -32,12 +53,12 @@
         msNavigationServiceProvider.saveItem('cadastros.usuarios', {
             title: 'Usuários',
             state: 'app.simple-cadastros-usuarios',
-             icon : 'icon-account-circle'
+            icon : 'icon-account-circle'
         });
 
         // Api
         
-        msApiProvider.register('tables.employees100', ['app/data/tables/employees100.json']);
+        msApiProvider.register('tables.usuarios', ['app/data/tables/usuarios.json']);
 
     }
 

@@ -33,44 +33,20 @@
                     <tr>
                         <th class="secondary-text">
                             <div class="table-header">
-                                <span class="column-title">Name</span>
+                                <span class="column-title">Nome</span>
                             </div>
                         </th>
                         <th class="secondary-text">
                             <div class="table-header">
-                                <span class="column-title">Position</span>
-                            </div>
-                        </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Office</span>
-                            </div>
-                        </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Age</span>
-                            </div>
-                        </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Start Date</span>
-                            </div>
-                        </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Salary</span>
+                                <span class="column-title">Email</span>
                             </div>
                         </th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="employee in ::vm.employees">
-                        <td>{{ employee.name }}</td>
-                        <td>{{ employee.position }}</td>
-                        <td>{{ employee.office }}</td>
-                        <td>{{ employee.age }}</td>
-                        <td>{{ employee.startDate }}</td>
-                        <td>{{ employee.salary }}</td>
+                    <tr ng-repeat="usuario in ::vm.usuarios" ng-click="vm.editar(usuario.id)">
+                        <td>{{ usuario.nome }}</td>
+                        <td>{{ usuario.email }}</td>
                     </tr>
                 </tbody>
             </table>

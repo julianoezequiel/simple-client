@@ -8,7 +8,7 @@
 
     /** @ngInject */
     function usuariosController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
-        ,$mdDialog, $mdMedia,$document, $timeout,Employees)
+        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios)
     {
         var vm = this ;
 
@@ -16,9 +16,17 @@
 
       
          // Data
-        vm.employees = Employees.data;
+        vm.usuarios = Usuarios.data;
 
         vm.activeMailPaneIndex = 0;
+
+        vm.editar = function(id){
+            $rootScope.state.go('app.simple-cadastros-gerenciamento',{'id':id});
+        }
+
+        vm.novo = function(){
+            $rootScope.state.go('app.simple-cadastros-gerenciamento');
+        }
 
         vm.dtOptions = {
             dom       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
