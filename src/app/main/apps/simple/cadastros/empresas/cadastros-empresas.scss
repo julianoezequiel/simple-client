@@ -1,0 +1,35 @@
+#cadastros-usuarios {
+
+    .add-user-button {
+        position: relative;
+   		right: 90%;
+    	top: 106px;
+       }
+
+       .pull-left{
+         float: left !important;
+       }
+    
+}
+
+// RESPONSIVE
+@media screen and (min-width: $layout-breakpoint-md) {
+
+    #cadastros-usuarios {
+
+      
+
+        }
+    
+
+}
+
+// RESPONSIVE
+@media screen and (max-width: $layout-breakpoint-xs) {
+
+    #cadastros-usuarios {
+
+      
+    }
+}
+

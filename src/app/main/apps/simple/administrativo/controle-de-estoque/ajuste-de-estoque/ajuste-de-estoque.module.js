@@ -3,8 +3,7 @@
     'use strict';
 
     angular
-        .module('app.simple.financeiro', [
-            'app.simple.compras'
+        .module('app.simple.ajuste-de-estoque', [
         ])
         .config(config);
 

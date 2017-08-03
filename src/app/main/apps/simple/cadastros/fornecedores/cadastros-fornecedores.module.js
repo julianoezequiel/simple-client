@@ -1,25 +1,27 @@
- (function ()
+(function ()
 {
     'use strict';
 
     angular
-        .module('app.simple.compras', ['app.simple.entrada-mercadoria'])
+        .module('app.cadastros.empresas', [
+
+        ])
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider,msNavigationServiceProvider)
+    function config(msNavigationServiceProvider)
     {
 
-        // msNavigationServiceProvider.saveItem('simple.empresas', {
+        // msNavigationServiceProvider.saveItem('simple', {
         //     title : 'Painel de Controle',
         //     icon  : 'icon-tile-four',
         //     weight: 1
         // });
 
-        // msNavigationServiceProvider.saveItem('apps.dashboards.project', {
-        //     title: 'Project',
-        //     state: 'app.dashboards_project'
-        // });
+        msNavigationServiceProvider.saveItem('cadastros.empresas', {
+            title: 'Empresas',
+            state: 'app.dashboards_project'
+        });
 
         // msNavigationServiceProvider.saveItem('apps.dashboards.server', {
         //     title: 'Server',

@@ -3,11 +3,24 @@
     'use strict';
 
     angular
-        .module('app.simple.compras', ['app.simple.entrada-mercadoria'])
+        .module('app.simple.cadastros-basicos', [
+            'app.cadastros-basicos.cargo',
+            'app.cadastros-basicos.CFOP-Natureza-da-operacao',
+            'app.cadastros-basicos.cores',
+            'app.cadastros-basicos.departamentos',
+            'app.cadastros-basicos.forma-de-pagamento',     
+            'app.cadastros-basicos.grupos',
+            'app.cadastros-basicos.marcas',
+            'app.cadastros-basicos.NCM',
+            'app.cadastros-basicos.sub-grupos',
+            'app.cadastros-basicos.tipo-de-servico'
+            'app.cadastros-basicos.tributos',
+            'app.cadastros-basicos.unidade-de-medida'    
+        ])
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider,msNavigationServiceProvider)
+    function config(msNavigationServiceProvider)
     {
 
         // msNavigationServiceProvider.saveItem('simple.empresas', {

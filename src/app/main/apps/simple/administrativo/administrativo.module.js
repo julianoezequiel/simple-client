@@ -4,7 +4,8 @@
 
     angular
         .module('app.simple.administrativo', [
-             'app.simple.financeiro'
+             'app.simple.financeiro',
+             'app.simple.controle-de-estoque'
 
         ])
         .config(config);

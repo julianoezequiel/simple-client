@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.simple.compras', ['app.simple.entrada-mercadoria'])
+        .module('app.simple.entrada-mercadoria', [])
         .config(config);
 
     /** @ngInject */

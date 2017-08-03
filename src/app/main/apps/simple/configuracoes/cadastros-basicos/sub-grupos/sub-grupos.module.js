@@ -3,11 +3,12 @@
     'use strict';
 
     angular
-        .module('app.simple.compras', ['app.simple.entrada-mercadoria'])
+        .module('app.cadastros-basicos.sub-grupos', [
+        ])
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider,msNavigationServiceProvider)
+    function config(msNavigationServiceProvider)
     {
 
         // msNavigationServiceProvider.saveItem('simple.empresas', {

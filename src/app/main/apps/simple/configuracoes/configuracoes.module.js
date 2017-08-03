@@ -5,7 +5,8 @@
     angular
         .module('app.simple.configuracoes', [
             'app.configuracoes.sistema',
-            'app.configuracoes.usuario'    
+            'app.configuracoes.usuario',
+            'app.simple.cadastros-basicos'    
         ])
         .config(config);
 

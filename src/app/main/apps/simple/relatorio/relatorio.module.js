@@ -4,6 +4,19 @@
 
     angular
         .module('app.simple.relatorio', [
+            'app.relatorios.30-dias-sem-venda',
+            'app.relatorios.ajustes',
+            'app.relatorios.comandas',
+            'app.relatorios.comissoes',
+            'app.relatorios.conta-correntes-cliente',
+            'app.relatorios.entrada-produtos',
+            'app.relatorios.estoque',
+            'app.relatorios.estoque-minimo',
+            'app.relatorios.estoque-valorizado',
+            'app.relatorios.gerenciar_nf',
+            'app.relatorios.ofertas',
+            'app.relatorios.produtos-cadastrados',
+            'app.relatorios.validades'
         ])
         .config(config);
 
@@ -72,7 +85,7 @@
             icon  : 'icon-tile-four',
         });
 
-        msNavigationServiceProvider.saveItem('relatorio.comicoes', {
+        msNavigationServiceProvider.saveItem('relatorio.comissoes', {
             title: 'Comissões',
             state: '',
             icon  : 'icon-tile-four',
@@ -90,7 +103,7 @@
             icon  : 'icon-tile-four',
         });
 
-         msNavigationServiceProvider.saveItem('relatorio.produtos_cadastrados', {
+         msNavigationServiceProvider.saveItem('relatorio.ajustes', {
             title: 'Ajustes',
             state: '',
             icon  : 'icon-tile-four',

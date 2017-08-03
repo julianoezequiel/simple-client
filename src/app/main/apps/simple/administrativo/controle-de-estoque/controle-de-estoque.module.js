@@ -3,11 +3,17 @@
     'use strict';
 
     angular
-        .module('app.simple.compras', ['app.simple.entrada-mercadoria'])
+        .module('app.simple.controle-de-estoque', [
+            'app.simple.agrupar-itens',
+            'app.simple.ajuste-de-estoque',
+            'app.simple.entrada-de-produtos',
+            'app.simple.etiquetas',
+            'app.simple.inventario'
+        ])
         .config(config);
 
     /** @ngInject */
-    function config($stateProvider, $translatePartialLoaderProvider,msNavigationServiceProvider)
+    function config(msNavigationServiceProvider)
     {
 
         // msNavigationServiceProvider.saveItem('simple.empresas', {

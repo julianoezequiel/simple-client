@@ -33,7 +33,7 @@
                     <!-- WIDGET GROUP -->
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
-                    <ms-widget style="height: 150px" data-ng-repeat="atalho in vm.atalhos" flippable="false" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
+                        <ms-widget style="height: 150px" data-ng-repeat="atalho in vm.atalhos" flippable="false" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
 
                             <!-- Front -->
                             <ms-widget-front class="white-bg" ng-click="vm.redirecionar(atalho.state)" >
@@ -48,7 +48,7 @@
                             </ms-widget-front>
                             <!-- / Front -->
 
-                        </ms-widget>
+                        </ms-widget>    
                         <!-- / WIDGET 1 -->
 
                     </div>
@@ -58,158 +58,26 @@
 
                 <md-tab label="Administrativo">
 
-                    <!-- WIDGET GROUP -->
+                     <!-- WIDGET GROUP -->
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
-                        <!-- WIDGET 8 -->
-                        <ms-widget layout="column" flex="100" flex-gt-sm="50">
+                        <ms-widget style="height: 150px" data-ng-repeat="atalho in vm.atalhos" flippable="false" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg">
-                                <div class="h3 p-16">
-                                    {{vm.widget8.title}}
+                            <ms-widget-front class="white-bg" ng-click="vm.redirecionar(atalho.state)" >
+                               <div class="pt-25" layout="column" layout-align="center center">
+                                    <i class="icon icon-{{::atalho.icone}} s60"></i>
+                                
+                                    <div class="light-blue-fg font-size-20 line-height-20">
+                                        {{atalho.descricao}}
+                                    </div>
+                                    <div class="h3 secondary-text font-weight-500">{{vm.widget1.data.label}}</div>
                                 </div>
-
-                                <md-divider></md-divider>
-
-                                <div class="p-16">
-                                    <nvd3 class="h-400"
-                                          options="vm.widget8.mainChart.options"
-                                          data="vm.widget8.mainChart.data"></nvd3>
-                                </div>
-
                             </ms-widget-front>
                             <!-- / Front -->
 
-                        </ms-widget>
-                        <!-- / WIDGET 8 -->
-
-                        <!-- WIDGET 9 -->
-                        <ms-widget layout="column" flex="100" flex-gt-sm="50">
-
-                            <!-- Front -->
-                            <ms-widget-front class="white-bg">
-                                <div class="ph-16 border-bottom" layout="row" layout-align="space-between center">
-                                    <div class="h3">{{vm.widget9.title}}</div>
-
-                                    <div class="pv-16">
-                                        <md-select class="simplified" ng-model="vm.widget9.currentRange"
-                                                   ng-change="vm.widget9.changeRange(vm.widget9.currentRange)"
-                                                   aria-label="Change range">
-                                            <md-option ng-repeat="(key, range) in vm.widget6.ranges"
-                                                       value="{{key}}">
-                                                {{range}}
-                                            </md-option>
-                                        </md-select>
-                                    </div>
-                                </div>
-
-                                <div class="p-16" layout="column" layout-align="center" layout-gt-xs="row"
-                                     layout-align-gt-xs="space-between center">
-                                    <div class="p-8">
-                                        <div class="h4 secondary-text">{{vm.widget9.weeklySpent.title}}</div>
-                                        <div class="pt-8 md-display-1 font-weight-300">
-                                            <span class="secondary-text">$</span><span>{{vm.widget9.weeklySpent.count[vm.widget9.currentRange]}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="p-8" flex>
-                                        <nvd3 class="h-50"
-                                              config="vm.widget9.chart.config"
-                                              options="vm.widget9.chart.options"
-                                              data="vm.widget9.weeklySpent.chartData"></nvd3>
-                                    </div>
-                                </div>
-
-                                <div class="p-16" layout="column" layout-align="center" layout-gt-xs="row"
-                                     layout-align-gt-xs="space-between center">
-                                    <div class="p-8">
-                                        <div class="h4 secondary-text">{{vm.widget9.totalSpent.title}}</div>
-                                        <div class="pt-8 md-display-1 font-weight-300">
-                                            <span class="secondary-text">$</span><span>{{vm.widget9.totalSpent.count[vm.widget9.currentRange]}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="p-8" flex>
-                                        <nvd3 class="h-50"
-                                              config="vm.widget9.chart.config"
-                                              options="vm.widget9.chart.options"
-                                              data="vm.widget9.totalSpent.chartData"></nvd3>
-                                    </div>
-                                </div>
-
-                                <div class="p-16" layout="column" layout-align="center" layout-gt-xs="row"
-                                     layout-align-gt-xs="space-between center">
-                                    <div class="p-8">
-                                        <div class="h4 secondary-text">{{vm.widget9.remaining.title}}</div>
-                                        <div class="pt-8 md-display-1 font-weight-300">
-                                            <span class="secondary-text">$</span><span>{{vm.widget9.remaining.count[vm.widget9.currentRange]}}</span>
-                                        </div>
-                                    </div>
-                                    <div class="p-8" flex>
-                                        <nvd3 class="h-50"
-                                              config="vm.widget9.chart.config"
-                                              options="vm.widget9.chart.options"
-                                              data="vm.widget9.remaining.chartData"></nvd3>
-                                    </div>
-                                </div>
-
-                                <div class="pv-24 mh-24 border-top">
-                                    <div class="h4 secondary-text">{{vm.widget9.totalBudget.title}}</div>
-                                    <div class="pt-8 md-display-1 font-weight-300">
-                                        <span class="secondary-text">$</span><span>{{vm.widget9.totalBudget.count}}</span>
-                                    </div>
-                                </div>
-
-                            </ms-widget-front>
-                            <!-- / Front -->
-
-                        </ms-widget>
-                        <!-- / WIDGET 9 -->
-
-                    </div>
-                    <!-- / WIDGET GROUP -->
-
-
-                    <!-- WIDGET GROUP -->
-                    <div class="widget-group" layout="row" flex="100" layout-wrap>
-
-                        <!-- WIDGET 10 -->
-                        <ms-widget layout="row" flex="100">
-
-                            <!-- Front -->
-                            <ms-widget-front class="white-bg">
-
-                                <div class="simple-table-container" ms-responsive-table>
-                                    <div class=" table-title">
-                                        {{vm.widget10.title}}
-                                    </div>
-
-                                    <table class="simple">
-                                        <thead>
-                                            <tr>
-                                                <th ng-repeat="column in vm.widget10.table.columns">
-                                                    {{column.title}}
-                                                </th>
-                                            </tr>
-                                        </thead>
-
-                                        <tbody>
-                                            <tr ng-repeat="row in vm.widget10.table.rows">
-                                                <td ng-repeat="cell in row">
-                                                    <span class="{{cell.classes}}">
-                                                        {{cell.value}}
-                                                    </span>
-                                                    <i ng-if="cell.icon" class="icon {{cell.icon}}"></i>
-                                                </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-
-                            </ms-widget-front>
-                            <!-- / Front -->
-
-                        </ms-widget>
-                        <!-- / WIDGET 10 -->
+                        </ms-widget>    
+                        <!-- / WIDGET 1 -->
 
                     </div>
                     <!-- / WIDGET GROUP -->
@@ -218,57 +86,32 @@
 
                 <md-tab label="Relatorios">
 
-                    <!-- WIDGET GROUP -->
+                     <!-- WIDGET GROUP -->
                     <div class="widget-group" layout="row" flex="100" layout-wrap>
 
-                        <!-- WIDGET 11 -->
-                        <ms-widget layout="row" flex="100">
+                        <ms-widget style="height: 150px" data-ng-repeat="atalho in vm.atalhos" flippable="false" layout="column" flex="100" flex-gt-xs="50" flex-gt-md="25">
 
                             <!-- Front -->
-                            <ms-widget-front class="white-bg">
-
-                                <div class="p-24 mb-8 border-bottom" layout="row" layout-align="space-between center">
-                                    <div class="h2">{{vm.widget11.title}}</div>
-                                    <div class="text-boxed red-bg white-fg m-0">{{vm.widget11.table.rows.length}}
-                                        members
+                            <ms-widget-front class="white-bg" ng-click="vm.redirecionar(atalho.state)" >
+                               <div class="pt-25" layout="column" layout-align="center center">
+                                    <i class="icon icon-{{::atalho.icone}} s60"></i>
+                                
+                                    <div class="light-blue-fg font-size-20 line-height-20">
+                                        {{atalho.descricao}}
                                     </div>
+                                    <div class="h3 secondary-text font-weight-500">{{vm.widget1.data.label}}</div>
                                 </div>
-
-                                <table class="dataTable row-border hover" datatable="ng"
-                                       dt-options="vm.widget11.dtOptions">
-                                    <thead>
-                                        <tr>
-                                            <th class="secondary-text"
-                                                ng-repeat="column in ::vm.widget11.table.columns">
-                                                <div class="table-header">
-                                                    <span class="column-title">{{column.title}}</span>
-                                                </div>
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr ng-repeat="row in ::vm.widget11.table.rows">
-                                            <td ng-repeat="cell in row">
-                                                <img class="avatar" ng-if="$index === 0"
-                                                     ng-src="assets/images/avatars/{{cell}}">
-                                                <span ng-if="$index != 0">
-                                                    {{cell}}
-                                                </span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-
                             </ms-widget-front>
                             <!-- / Front -->
 
-                        </ms-widget>
-                        <!-- / WIDGET 11 -->
+                        </ms-widget>    
+                        <!-- / WIDGET 1 -->
 
                     </div>
                     <!-- / WIDGET GROUP -->
 
                 </md-tab>
+                
             </md-tabs>
 
         </div>
