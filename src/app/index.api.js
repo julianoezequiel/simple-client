@@ -187,6 +187,10 @@
           User :  $resource(api.baseUrl + 'restrict/usuario')
         }
 
+        api.usuario = {
+            
+        }
+
 
 
         /**

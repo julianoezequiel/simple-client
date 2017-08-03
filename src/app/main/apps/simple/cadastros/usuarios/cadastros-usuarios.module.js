@@ -50,14 +50,7 @@
         });
 
 
-        msNavigationServiceProvider.saveItem('cadastros.usuarios', {
-            title: 'Usuários',
-            state: 'app.simple-cadastros-usuarios',
-            icon : 'icon-account-circle'
-        });
-
-        // Api
-        
+        // Api        
         msApiProvider.register('tables.usuarios', ['app/data/tables/usuarios.json']);
 
     }

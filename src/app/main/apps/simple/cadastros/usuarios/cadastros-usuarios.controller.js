@@ -8,7 +8,7 @@
 
     /** @ngInject */
     function usuariosController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
-        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios)
+        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios,msNavigationService)
     {
         var vm = this ;
 
@@ -45,6 +45,17 @@
                 { 'width': '20%', 'targets': 2 }
               ]
         };
+
+        //menu de navegação
+        msNavigationServiceProvider.saveItem('cadastros.usuarios', {
+            title: 'Usuários',
+            state: 'app.simple-cadastros-usuarios',
+            icon : 'icon-account-circle',
+            hidden: function ()
+            {
+                return true; 
+            }
+        });
              
 
     }

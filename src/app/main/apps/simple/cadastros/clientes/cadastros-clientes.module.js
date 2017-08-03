@@ -9,7 +9,7 @@
         .config(config);
 
     /** @ngInject */
-    function config(msNavigationServiceProvider,$stateProvider)
+    function config(msNavigationServiceProvider,$stateProvider,msApiProvider)
     {
 
        // State
@@ -21,14 +21,18 @@
                     controller : 'ClienteController as vm'
                 }
             },
+            resolve: {
+                Clientes: function (msApi)
+                {
+                    return msApi.resolve('tables.clientes@get');
+                }
+            },
             bodyClass: 'cadastros-clientes'
-        });
+        });   
 
-        msNavigationServiceProvider.saveItem('cadastros.clientes', {
-            title: 'Clientes',
-            state: 'app.simple-cadastros-clientes',
-            icon : 'icon-cart',
-        });
+
+        // Api        
+        msApiProvider.register('tables.clientes', ['app/data/tables/clientes.json']);    
 
     }
 

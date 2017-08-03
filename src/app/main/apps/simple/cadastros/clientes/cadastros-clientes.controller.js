@@ -8,13 +8,10 @@
 
     /** @ngInject */
     function usuariosController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
-        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios)
+        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios,msNavigationService)
     {
         var vm = this ;
 
-        vm.path = ["Cadastros de usuários"];
-
-      
          // Data
         vm.usuarios = Usuarios.data;
 
@@ -45,6 +42,16 @@
                 { 'width': '20%', 'targets': 2 }
               ]
         };
+
+        msNavigationServiceProvider.saveItem('cadastros.clientes', {
+            title: 'Clientes',
+            state: 'app.simple-cadastros-clientes',
+            icon : 'icon-cart',
+            hidden: function ()
+            {
+                return true; 
+            }
+        });
              
 
     }

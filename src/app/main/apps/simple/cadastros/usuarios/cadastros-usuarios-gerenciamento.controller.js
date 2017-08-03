@@ -8,16 +8,18 @@
 
     /** @ngInject */
     function UsuarioGerenciamentoController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
-        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios)
+        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios,$stateParams)
     {
         var vm = this ;
 
         vm.path = ["Cadastros de usuários"];
 
-        vm.usuario = Usuarios;
+        vm.usuario = Usuarios.filter(function(usuario){
+            return usuario.id == $stateParams.id;
+        })[0];
 
-      console.log('modulo UsuarioGerenciamentoController');
-      console.log(Usuarios);
+        console.log('modulo UsuarioGerenciamentoController');
+        console.log(vm.usuario);
 
     }
 })();
