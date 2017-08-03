@@ -8,7 +8,7 @@
         .config(config);
 
     /** @ngInject */
-    function config(msNavigationServiceProvider,$stateProvider,msApiProvider,$stateParams)
+    function config(msNavigationServiceProvider,$stateProvider,msApiProvider)
     {
 
         // State
@@ -39,16 +39,16 @@
                 }
             },
              resolve: {
-                Usuario: function (msApi,$stateParams)
+                Usuarios: function (msApi,$stateParams)
                 {   
+                    console.log("rota");
                     var usuarios =  msApi.resolve('tables.usuarios@get');
-                    return usuarios.filter(function(u){
-                       return u.id == $stateParams.id;
-                    });
+                    return usuarios;
                 }
             },
             bodyClass: 'cadastros-usuarios'
         });
+
 
         msNavigationServiceProvider.saveItem('cadastros.usuarios', {
             title: 'Usuários',

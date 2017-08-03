@@ -18,6 +18,14 @@
          // Data
         vm.usuarios = Usuarios.data;
 
+        vm.topDirections = ['left', 'up'];
+        vm.bottomDirections = ['down', 'right'];
+        vm.isOpen = false;
+        vm.availableModes = ['md-fling', 'md-scale']; 
+        vm.selectedMode = 'md-scale';
+        vm.availableDirections = ['up', 'down', 'left', 'right'];
+        vm.selectedDirection = 'right';
+
         vm.activeMailPaneIndex = 0;
 
         vm.editar = function(id){
@@ -29,10 +37,13 @@
         }
 
         vm.dtOptions = {
-            dom       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
-            pagingType: 'simple',
-            autoWidth : false,
-            responsive: true
+            'dom'       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
+            'pagingType': 'simple',
+            'autoWidth' : false,
+            'responsive': true,
+            'columnDefs': [
+                { 'width': '20%', 'targets': 2 }
+              ]
         };
              
 
