@@ -3,11 +3,16 @@
     'use strict';
 
     angular
-        .module('app.simple.cadastros', [
-           'app.cadastros.clientes',
-           'app.cadastros.empresas',
-           'app.cadastros.produtos',
-           'app.cadastros.usuarios'
+        // .module('app.simple.cadastros', [
+        //    'app.cadastros.clientes',
+        //    'app.cadastros.empresas',
+        //    'app.cadastros.produtos',
+        //    'app.cadastros.usuarios',
+        //    'app.cadastros.vendedores'
+        // ])
+        .module('app.simple.cadastros', [         
+           'app.cadastros.usuarios',
+           'app.cadastros.clientes'
         ])
         .config(config);
 
@@ -17,8 +22,14 @@
 
         msNavigationServiceProvider.saveItem('cadastros', {
             title : 'Cadastros',
-            icon  : 'icon-tile-four',
-            weight: 1
+            icon  : 'icon-pencil',
+            weight: 1,
+             hidden: function ()
+            {
+                console.log('adicionando menu principal');
+                
+                return false;
+            }
         });
 
         // msNavigationServiceProvider.saveItem('apps.dashboards.project', {

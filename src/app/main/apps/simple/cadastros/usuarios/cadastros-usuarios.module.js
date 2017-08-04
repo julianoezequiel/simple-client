@@ -30,7 +30,7 @@
         });
 
          // State
-        $stateProvider.state('app.simple-cadastros-gerenciamento', {
+        $stateProvider.state('app.simple-cadastros-usuarios-gerenciamento', {
             url      : '/cadastros/usuarios/gerenciamento/:id',
             views    : {
                'content@app': {
@@ -49,9 +49,9 @@
             bodyClass: 'cadastros-usuarios'
         });
 
-
-        // Api        
+  // Api        
         msApiProvider.register('tables.usuarios', ['app/data/tables/usuarios.json']);
+
 
     }
 

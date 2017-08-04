@@ -3,7 +3,8 @@
     'use strict';
 
     angular
-        .module('app.cadastros-basicos.cargo', []
+        .module('app.cadastros-basicos.cargo', [
+        ])
         .config(config);
 
     /** @ngInject */

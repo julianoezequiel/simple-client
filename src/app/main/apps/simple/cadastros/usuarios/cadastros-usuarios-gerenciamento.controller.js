@@ -8,18 +8,30 @@
 
     /** @ngInject */
     function UsuarioGerenciamentoController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
-        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios,$stateParams)
+        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios,$stateParams,$mdBottomSheet)
     {
         var vm = this ;
 
-        vm.path = ["Cadastros de usuários"];
+       
+        vm.isOpen = true;
+        vm.selectedMode = 'md-scale';
+        vm.selectedDirection = 'left';
 
-        vm.usuario = Usuarios.filter(function(usuario){
+        vm.usuario = Usuarios.data.filter(function(usuario){
             return usuario.id == $stateParams.id;
         })[0];
 
         console.log('modulo UsuarioGerenciamentoController');
         console.log(vm.usuario);
 
-    }
+      vm.isOpen = false;
+      vm.demo = {
+        isOpen: false,
+        count: 0,
+        selectedDirection: 'right'
+      };
+
+    
+}
+
 })();

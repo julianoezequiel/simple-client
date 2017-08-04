@@ -3,12 +3,16 @@
     'use strict';
 
     angular
-        .module('app.simple', [
+        // .module('app.simple', [
+        //      'app.simple.painel-controle',
+        //      'app.simple.cadastros',
+        //      'app.simple.administrativo',
+        //      'app.simple.configuracoes',
+        //      'app.simple.relatorio'
+        // ])
+         .module('app.simple', [
              'app.simple.painel-controle',
-             'app.simple.cadastros',
-             'app.simple.administrativo',
-             'app.simple.configuracoes',
-             'app.simple.relatorio'
+             'app.simple.cadastros'
         ])
         .config(config);
 

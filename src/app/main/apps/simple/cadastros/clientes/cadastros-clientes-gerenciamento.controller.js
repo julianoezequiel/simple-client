@@ -8,13 +8,13 @@
 
     /** @ngInject */
     function ClientesGerenciamentoController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
-        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios)
+        ,$mdDialog, $mdMedia,$document, $timeout,Clientes)
     {
         var vm = this ;
 
         
         console.log('modulo ClientesGerenciamentoController');
-        console.log(Usuarios);
+        console.log(Clientes);
 
     }
 })();

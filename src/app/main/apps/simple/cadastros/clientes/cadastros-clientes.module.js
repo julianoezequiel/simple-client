@@ -4,7 +4,6 @@
 
     angular
         .module('app.cadastros.clientes', [
-
         ])
         .config(config);
 
@@ -29,6 +28,24 @@
             },
             bodyClass: 'cadastros-clientes'
         });   
+
+         // State
+        $stateProvider.state('app.simple-cadastros-clientes-gerenciamento', {
+            url      : '/cadastros/clientes/gerenciamento/:id',
+            views    : {
+               'content@app': {
+                    templateUrl: 'app/main/apps/simple/cadastros/clientes/cadastros-clientes-gerenciamento.template.html',
+                    controller : 'ClientesGerenciamentoController as vm'
+                }
+            },
+             resolve: {
+                Clientes: function (msApi)
+                {
+                    return msApi.resolve('tables.clientes@get');
+                }
+            },
+            bodyClass: 'cadastros-clientes'
+        });
 
 
         // Api        

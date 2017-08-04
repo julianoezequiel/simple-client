@@ -3,17 +3,17 @@
     'use strict';
 
     angular
-        .module('app.cadastros.usuarios')
-        .controller('UsuariosController', usuariosController);
+        .module('app.cadastros.clientes')
+        .controller('ClienteController', ClienteController);
 
     /** @ngInject */
-    function usuariosController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
-        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios,msNavigationService)
+    function ClienteController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
+        ,$mdDialog, $mdMedia,$document, $timeout,Clientes)
     {
         var vm = this ;
 
          // Data
-        vm.usuarios = Usuarios.data;
+        vm.clientes = Clientes.data;
 
         vm.topDirections = ['left', 'up'];
         vm.bottomDirections = ['down', 'right'];
@@ -26,11 +26,11 @@
         vm.activeMailPaneIndex = 0;
 
         vm.editar = function(id){
-            $rootScope.state.go('app.simple-cadastros-gerenciamento',{'id':id});
+            $rootScope.state.go('app.simple-cadastros-clientes-gerenciamento',{'id':id});
         }
 
         vm.novo = function(){
-            $rootScope.state.go('app.simple-cadastros-gerenciamento');
+            $rootScope.state.go('app.simple-cadastros-clientes-gerenciamento');
         }
 
         vm.dtOptions = {
@@ -42,16 +42,6 @@
                 { 'width': '20%', 'targets': 2 }
               ]
         };
-
-        msNavigationServiceProvider.saveItem('cadastros.clientes', {
-            title: 'Clientes',
-            state: 'app.simple-cadastros-clientes',
-            icon : 'icon-cart',
-            hidden: function ()
-            {
-                return true; 
-            }
-        });
              
 
     }

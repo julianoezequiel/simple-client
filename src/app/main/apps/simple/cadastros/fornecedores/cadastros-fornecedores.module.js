@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.cadastros.empresas', [
+        .module('app.cadastros.fornecedores', [
 
         ])
         .config(config);

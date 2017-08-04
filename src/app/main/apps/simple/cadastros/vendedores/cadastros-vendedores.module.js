@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.cadastros.clientes', [
+        .module('app.cadastros.vendedores', [
 
         ])
         .config(config);
@@ -13,7 +13,7 @@
     {
 
        // State
-        $stateProvider.state('app.simple-cadastros-clientes', {
+        $stateProvider.state('app.simple-cadastros-vendedores', {
             url      : '/cadastros/clientes',
             views    : {
                'content@app': {

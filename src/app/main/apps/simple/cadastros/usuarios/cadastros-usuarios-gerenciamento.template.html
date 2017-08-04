@@ -1,1 +1,106 @@
-<h2>template novo</h2>
+
+<div id="cadastros-usuarios" class="page-layout simple tabbed doc-page element-doc-page" ng-cloak>
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">Cadastros</span>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">Usuários</span>
+            </div>
+            <div class="title">Cadastrar Usuário</div>
+        </div>
+
+		
+
+       <!--  <md-fab-speed-dial md-open="vm.isOpen" md-direction="{{vm.selectedDirection}}"
+         ng-class="vm.selectedMode">
+            <md-fab-trigger>
+              <md-button aria-label="menu" class="md-fab md-warn md-mini">
+             
+                <md-icon  md-font-icon="icon-view-headline"></md-icon>
+              </md-button>
+            </md-fab-trigger>
+            <md-fab-actions>
+              <md-button ng-click="vm.editar(usuario.id)" aria-label="editar" class="md-fab md-raised md-mini">
+                <md-tooltip md-direction="top">
+                  Editar
+                </md-tooltip>
+                <md-icon md-font-icon="icon-pencil" aria-label="editar"></md-icon>
+              </md-button>
+              <md-button aria-label="excluir" class="md-fab md-raised md-mini">
+                <md-tooltip md-direction="top">
+                  Excluir
+                </md-tooltip>
+                <md-icon md-font-icon="icon-delete" aria-label="excluir"></md-icon>
+              </md-button>
+            </md-fab-actions>
+          </md-fab-speed-dial> -->
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+      <div  layout="row" >
+		 <md-fab-toolbar md-open="vm.isOpen" count="vm.count"
+		                  md-direction="{{vm.selectedDirection}}">
+		    <md-fab-trigger class="align-with-text">
+		      <md-button aria-label="menu" class="md-fab md-warn">
+		        <md-icon  md-font-icon="icon-view-headline"></md-icon>
+		      </md-button>
+		    </md-fab-trigger>
+		    <md-toolbar>
+		      <md-fab-actions class="md-toolbar-tools md-warn">
+		        <md-button aria-label="comment" class="md-icon-button">
+		          <md-icon md-font-icon="icon-pencil"></md-icon>
+		        </md-button>
+		        <md-button aria-label="label" class="md-icon-button">
+		          <md-icon md-font-icon="icon-delete"></md-icon>
+		        </md-button>
+		        <md-button aria-label="photo" class="md-icon-button">
+		          <md-icon md-font-icon="icon-save"></md-icon>
+		        </md-button>
+		      </md-fab-actions>
+		    </md-toolbar>
+		  </md-fab-toolbar>
+		  </div>
+       <md-tabs md-dynamic-height>
+
+            <md-tab label="Dados">
+                <!-- DEMO CONTENT -->
+                <div ng-include="'app/main/ui/page-layouts/demo/demo-content.html'"></div>
+                <!-- / DEMO CONTENT -->
+            </md-tab>
+
+            <md-tab label="Permissões">
+                <!-- DEMO CONTENT -->
+                <div ng-include="'app/main/ui/page-layouts/demo/demo-content.html'"></div>
+                <!-- / DEMO CONTENT -->
+            </md-tab>
+
+        </md-tabs>
+
+    </div>
+    <!-- / CONTENT -->
+
+    <md-bottom-sheet class="md-grid" layout="column" ng-cloak>
+  <div layout="row" layout-align="center center">
+    <h4>With clickOutsideToClose option, drag down or press ESC to close</h4>
+  </div>
+  <div>
+    <md-list flex layout="row" layout-align="center center">
+      <md-list-item ng-repeat="item in items">
+        <md-button class="md-grid-item-content" ng-click="listItemClick($index)">
+          <md-icon md-svg-src="{{item.icon}}"></md-icon>
+          <div class="md-grid-text"> {{ item.name }} </div>
+        </md-button>
+      </md-list-item>
+    </md-list>
+  </div>
+</md-bottom-sheet>
+
+</div>

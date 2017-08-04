@@ -3,7 +3,7 @@
     'use strict';
 
     angular
-        .module('app.cadastros.usuarios')
+        .module('app.cadastros.fornecedores')
         .controller('UsuariosController', usuariosController);
 
     /** @ngInject */

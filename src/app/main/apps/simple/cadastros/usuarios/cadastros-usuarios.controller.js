@@ -29,11 +29,11 @@
         vm.activeMailPaneIndex = 0;
 
         vm.editar = function(id){
-            $rootScope.state.go('app.simple-cadastros-gerenciamento',{'id':id});
+            $rootScope.state.go('app.simple-cadastros-usuarios-gerenciamento',{'id':id});
         }
 
         vm.novo = function(){
-            $rootScope.state.go('app.simple-cadastros-gerenciamento');
+            $rootScope.state.go('app.simple-cadastros-usuarios-gerenciamento');
         }
 
         vm.dtOptions = {
@@ -46,16 +46,7 @@
               ]
         };
 
-        //menu de navegação
-        msNavigationServiceProvider.saveItem('cadastros.usuarios', {
-            title: 'Usuários',
-            state: 'app.simple-cadastros-usuarios',
-            icon : 'icon-account-circle',
-            hidden: function ()
-            {
-                return true; 
-            }
-        });
+        
              
 
     }

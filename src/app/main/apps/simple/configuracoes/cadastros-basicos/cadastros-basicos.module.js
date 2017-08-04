@@ -13,7 +13,7 @@
             'app.cadastros-basicos.marcas',
             'app.cadastros-basicos.NCM',
             'app.cadastros-basicos.sub-grupos',
-            'app.cadastros-basicos.tipo-de-servico'
+            'app.cadastros-basicos.tipo-de-servico',
             'app.cadastros-basicos.tributos',
             'app.cadastros-basicos.unidade-de-medida'    
         ])
