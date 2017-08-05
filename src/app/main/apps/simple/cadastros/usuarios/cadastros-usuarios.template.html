@@ -1,59 +1,126 @@
-
-<div id="cadastros-usuarios" class="page-layout simple fullwidth doc-page element-doc-page" ng-cloak>
-
-    <!-- HEADER -->
+<div id="cadastros-usuarios" class="page-layout carded fullwidth doc-page element-doc-page" layout="row">
+  <!-- TOP BACKGROUND -->
+  <div class="top-bg md-accent-bg"></div>
+  <!-- / TOP BACKGROUND -->
+  <!-- CENTER -->
+  <div class="center" layout="column" flex>
+    <!-- TOP BACKGROUND -->
     <div class="header md-accent-bg" layout="row" layout-align="space-between">
-        <div layout="column" layout-align="center start">
-            <div class="breadcrumb" layout="row" layout-align="start center">
-                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
-                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
-                <span class="parent">Cadastros</span>
-                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
-                <span class="parent">Usuários</span>
-            </div>
-            <div class="title">Lista de usuário</div>
+      <div layout="column" layout-align="center start">
+        <div class="breadcrumb" layout="row" layout-align="start center">
+          <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+          <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+          <span class="parent">Cadastros</span>
+          <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+          <span class="parent">Usuários</span>
         </div>
-
-        <md-button class="add-user-button md-fab md-warn"
-                       ng-click="vm.novo()" aria-label="Add User" translate
-                       translate-attr-aria-label="FM.ADD_FILE">
-                <md-icon md-font-icon="icon-plus"></md-icon>
+        <div class="title">Cadastrar Usuário</div>
+      </div>
+    </div>
+    <!-- / TOP BACKGROUND -->
+    <!-- CONTENT CARD -->
+    <div class="content-card" layout="column" flex>
+      <!-- CONTENT TOOLBAR -->
+      <div class="toolbar" layout="row" layout-align="start center">
+        
+        <md-button class="md-icon-button" aria-label="More" ng-click="vm.voltar()">
+          <md-tooltip md-direction="top">
+            Voltar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-keyboard-backspace"></md-icon>
         </md-button>
 
-    </div>
-    <!-- / HEADER -->
+        <md-button class="md-icon-button" ng-click="vm.novo()" aria-label="Add User">
+         <md-tooltip md-direction="top">
+            Adicionar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-plus"></md-icon>
+        </md-button>
 
-    <!-- CONTENT -->
-    <div class="content">
+        <md-divider class="vertical-divider"></md-divider>
 
-        <!-- <div class="md-title mb-32">Zero Configuration</div> -->
+        <md-button class="md-icon-button" aria-label="Settings">
+          <md-tooltip md-direction="top">
+            Salvar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-content-save"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-tooltip md-direction="top">
+            Editar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-pencil"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-tooltip md-direction="top">
+            Atualizar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-refresh"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-tooltip md-direction="top">
+            Imprimir
+          </md-tooltip>
+          <md-icon md-font-icon="icon-printer"></md-icon>
+        </md-button>
+        <md-divider class="vertical-divider"></md-divider>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-tooltip md-direction="top">
+            Excluir
+          </md-tooltip>
+          <md-icon md-font-icon="icon-delete"></md-icon>
+        </md-button>
+      </div>
+      <!-- <md-fab-toolbar md-open="vm.isOpen" count="vm.count"
+                          md-direction="{{vm.selectedDirection}}">
+            <md-fab-trigger class="align-with-text">
+              <md-button aria-label="menu" class="md-fab md-primary">
+                <md-icon  md-font-icon="icon-view-headline"></md-icon>
+              </md-button>
+            </md-fab-trigger>
+            <md-toolbar>
+              <md-fab-actions class="md-toolbar-tools">
+                <md-button aria-label="comment" class="md-icon-button">
+                  <md-icon md-font-icon="icon-pencil"></md-icon>
+                </md-button>
+                <md-button aria-label="label" class="md-icon-button">
+                  <md-icon md-font-icon="icon-delete"></md-icon>
+                </md-button>
+                <md-button aria-label="photo" class="md-icon-button">
+                  <md-icon md-font-icon="icon-save"></md-icon>
+                </md-button>
+              </md-fab-actions>
+            </md-toolbar>
+        </md-fab-toolbar> -->
+      <!-- / CONTENT TOOLBAR -->
+      <!-- CONTENT -->
+      <md-content class="content" flex ms-scroll>
         <div class="white-bg md-whiteframe-4dp">
-            <table class="dataTable row-border hover" datatable="ng" dt-options="vm.dtOptions">
-                <thead>
-                    <tr>
-                        
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Nome</span>
-                            </div>
-                        </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Email</span>
-                            </div>
-                        </th>
-                        <th class="secondary-text">
-                            <div class="table-header">
-                                <span class="column-title">Ações</span>
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr class="" ng-repeat="usuario in ::vm.usuarios" >
-                        <td >{{ usuario.nome }}</td>
-                        <td >{{ usuario.email }}</td>
-                        <td>
-                        <!-- <md-fab-speed-dial md-open="false" md-direction="{{vm.selectedDirection}}"
+          <table class="dataTable row-border hover" datatable="ng" dt-options="vm.dtOptions">
+            <thead>
+              <tr>
+                <th class="secondary-text">
+                  <div class="table-header">
+                    <span class="column-title">Nome</span>
+                  </div>
+                </th>
+                <th class="secondary-text">
+                  <div class="table-header">
+                    <span class="column-title">Email</span>
+                  </div>
+                </th>
+                <th class="secondary-text">
+                  <div class="table-header">
+                    <span class="column-title">Ações</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="" ng-repeat="usuario in ::vm.usuarios">
+                <td>{{ usuario.nome }}</td>
+                <td>{{ usuario.email }}</td>
+                <td>
+                  <!-- <md-fab-speed-dial md-open="false" md-direction="{{vm.selectedDirection}}"
                          ng-class="vm.selectedMode">
                             <md-fab-trigger>
                               <md-button aria-label="menu" class="md-fab md-warn md-mini">
@@ -62,28 +129,30 @@
                               </md-button>
                             </md-fab-trigger>
                             <md-fab-actions> -->
-                              <md-button ng-click="vm.editar(usuario.id)" aria-label="editar" class="md-fab md-raised md-mini">
-                                <md-tooltip md-direction="top">
-                                  Editar
-                                </md-tooltip>
-                                <md-icon md-font-icon="icon-pencil" aria-label="editar"></md-icon>
-                              </md-button>
-                              <md-button aria-label="excluir" class="md-fab md-raised md-mini">
-                                <md-tooltip md-direction="top">
-                                  Excluir
-                                </md-tooltip>
-                                <md-icon md-font-icon="icon-delete" aria-label="excluir"></md-icon>
-                              </md-button>
-                           <!--  </md-fab-actions>
+                  <md-button ng-click="vm.editar(usuario.id)" aria-label="editar" class="md-fab md-raised md-mini">
+                    <md-tooltip md-direction="top">
+                      Editar
+                    </md-tooltip>
+                    <md-icon md-font-icon="icon-pencil" aria-label="editar"></md-icon>
+                  </md-button>
+                  <md-button aria-label="excluir" class="md-fab md-raised md-mini">
+                    <md-tooltip md-direction="top">
+                      Excluir
+                    </md-tooltip>
+                    <md-icon md-font-icon="icon-delete" aria-label="excluir"></md-icon>
+                  </md-button>
+                  <!--  </md-fab-actions>
                           </md-fab-speed-dial> -->
-                        </td>
-
-                    </tr>
-                </tbody>
-            </table>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
         </div>
-
+      </md-content>
+      <!-- / CONTENT -->
     </div>
-    <!-- / CONTENT -->
-
+    <!-- / CONTENT CARD -->
+  </div>
+  <!-- / CENTER -->
 </div>

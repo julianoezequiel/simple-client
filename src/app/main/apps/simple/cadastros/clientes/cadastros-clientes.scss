@@ -1,33 +1,31 @@
 #cadastros-clientes {
 
-    .add-user-button {
-      position: relative;
-   		right: 90%;
-    	top: 106px;
-    }
+  .add-user-button {
+    position: relative;
+    right: 90%;
+    top: 106px;
+  }
 
-    .pull-left{
-      float: left !important;
-    }
-    
+  .pull-left {
+    float: left !important;
+  }
+
+  .vertical-divider {
+    border-top-width: 0 !important;
+    border-right-width: 1px !important;
+    border-right-style: solid !important;
+    height: 100% !important;
+  }
 }
 
 // RESPONSIVE
 @media screen and (min-width: $layout-breakpoint-md) {
 
-    #cadastros-clientes {      
-
-        }
-    
-
+  #cadastros-clientes {}
 }
 
 // RESPONSIVE
 @media screen and (max-width: $layout-breakpoint-xs) {
 
-    #cadastros-clientes {
-
-      
-    }
+  #cadastros-clientes {}
 }
-

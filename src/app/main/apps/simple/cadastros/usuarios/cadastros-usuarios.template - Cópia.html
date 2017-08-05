@@ -1,0 +1,89 @@
+
+<div id="cadastros-usuarios" class="page-layout simple fullwidth doc-page element-doc-page" ng-cloak>
+
+    <!-- HEADER -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+        <div layout="column" layout-align="center start">
+            <div class="breadcrumb" layout="row" layout-align="start center">
+                <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">Cadastros</span>
+                <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+                <span class="parent">Usuários</span>
+            </div>
+            <div class="title">Lista de usuário</div>
+        </div>
+
+        <md-button class="add-user-button md-fab md-warn"
+                       ng-click="vm.novo()" aria-label="Add User" translate
+                       translate-attr-aria-label="FM.ADD_FILE">
+                <md-icon md-font-icon="icon-plus"></md-icon>
+        </md-button>
+
+    </div>
+    <!-- / HEADER -->
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <!-- <div class="md-title mb-32">Zero Configuration</div> -->
+        <div class="white-bg md-whiteframe-4dp">
+            <table class="dataTable row-border hover" datatable="ng" dt-options="vm.dtOptions">
+                <thead>
+                    <tr>
+                        
+                        <th class="secondary-text">
+                            <div class="table-header">
+                                <span class="column-title">Nome</span>
+                            </div>
+                        </th>
+                        <th class="secondary-text">
+                            <div class="table-header">
+                                <span class="column-title">Email</span>
+                            </div>
+                        </th>
+                        <th class="secondary-text">
+                            <div class="table-header">
+                                <span class="column-title">Ações</span>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="" ng-repeat="usuario in ::vm.usuarios" >
+                        <td >{{ usuario.nome }}</td>
+                        <td >{{ usuario.email }}</td>
+                        <td>
+                        <!-- <md-fab-speed-dial md-open="false" md-direction="{{vm.selectedDirection}}"
+                         ng-class="vm.selectedMode">
+                            <md-fab-trigger>
+                              <md-button aria-label="menu" class="md-fab md-warn md-mini">
+                             
+                                <md-icon  md-font-icon="icon-view-headline"></md-icon>
+                              </md-button>
+                            </md-fab-trigger>
+                            <md-fab-actions> -->
+                              <md-button ng-click="vm.editar(usuario.id)" aria-label="editar" class="md-fab md-raised md-mini">
+                                <md-tooltip md-direction="top">
+                                  Editar
+                                </md-tooltip>
+                                <md-icon md-font-icon="icon-pencil" aria-label="editar"></md-icon>
+                              </md-button>
+                              <md-button aria-label="excluir" class="md-fab md-raised md-mini">
+                                <md-tooltip md-direction="top">
+                                  Excluir
+                                </md-tooltip>
+                                <md-icon md-font-icon="icon-delete" aria-label="excluir"></md-icon>
+                              </md-button>
+                           <!--  </md-fab-actions>
+                          </md-fab-speed-dial> -->
+                        </td>
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <!-- / CONTENT -->
+
+</div>

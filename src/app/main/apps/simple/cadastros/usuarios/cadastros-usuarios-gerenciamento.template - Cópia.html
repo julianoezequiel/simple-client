@@ -1,31 +1,25 @@
-<div id="cadastros-usuarios" class="page-layout carded fullwidth doc-page element-doc-page" layout="row">
-  
- <!-- TOP BACKGROUND -->
-    <div class="top-bg md-accent-bg"></div>
-    <!-- / TOP BACKGROUND -->
-
-
-  <!-- CENTER -->
-  <div class="center" layout="column" flex>
-    <!-- TOP BACKGROUND -->
-    <div class="header md-accent-bg" layout="row" layout-align="space-between">
-      <div layout="column" layout-align="center start">
-        <div class="breadcrumb" layout="row" layout-align="start center">
-          <md-icon md-font-icon="icon-home" class="s16"></md-icon>
-          <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
-          <span class="parent">Cadastros</span>
-          <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
-          <span class="parent">Usuários</span>
-        </div>
-        <div class="title">Cadastrar Usuário</div>
+<div id="cadastros-usuarios" class="page-layout simple tabbed doc-page element-doc-page" ng-cloak>
+  <!-- HEADER -->
+  <div class="header md-accent-bg" layout="row" layout-align="space-between">
+    <div layout="column" layout-align="center start">
+      <div class="breadcrumb" layout="row" layout-align="start center">
+        <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+        <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+        <span class="parent">Cadastros</span>
+        <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+        <span class="parent">Usuários</span>
       </div>
+      <div class="title">Cadastrar Usuário</div>
     </div>
-    <!-- / TOP BACKGROUND -->
-    <!-- CONTENT CARD -->
-    <div class="content-card" layout="column" flex>
-      <!-- CONTENT TOOLBAR -->
-      <div class="toolbar" layout="row" layout-align="start center">
-           <md-button class="md-icon-button" aria-label="More" ng-click="vm.voltar()">
+  </div>
+  <!-- / HEADER -->
+  <!-- CONTENT -->
+  <div class="content">
+    <div layout="row">
+      <div flex>
+        <md-toolbar class="md-hue-2">
+          <div class="md-toolbar-tools">
+            <md-button class="md-icon-button" aria-label="More" ng-click="vm.voltar()">
               <md-tooltip md-direction="top">
                 Voltar
               </md-tooltip>
@@ -64,6 +58,7 @@
               <md-icon md-font-icon="icon-delete"></md-icon>
             </md-button>
           </div>
+        </md-toolbar>
         <!-- <md-fab-toolbar md-open="vm.isOpen" count="vm.count"
 		                  md-direction="{{vm.selectedDirection}}">
 		    <md-fab-trigger class="align-with-text">
@@ -85,16 +80,35 @@
 		      </md-fab-actions>
 		    </md-toolbar>
 		</md-fab-toolbar> -->
-      <!-- / CONTENT TOOLBAR -->
-      <!-- CONTENT -->
-      <md-content class="content" flex ms-scroll>
+      </div>
+    </div>
+    <md-tabs md-dynamic-height>
+      <md-tab label="Dados">
         <!-- DEMO CONTENT -->
         <div ng-include="'app/main/ui/page-layouts/demo/demo-content.html'"></div>
         <!-- / DEMO CONTENT -->
-      </md-content>
-      <!-- / CONTENT -->
-    </div>
-    <!-- / CONTENT CARD -->
+      </md-tab>
+      <md-tab label="Permissões">
+        <!-- DEMO CONTENT -->
+        <div ng-include="'app/main/ui/page-layouts/demo/demo-content.html'"></div>
+        <!-- / DEMO CONTENT -->
+      </md-tab>
+    </md-tabs>
   </div>
-  <!-- / CENTER -->
+  <!-- / CONTENT -->
+  <md-bottom-sheet class="md-grid" layout="column" ng-cloak>
+    <div layout="row" layout-align="center center">
+      <h4>With clickOutsideToClose option, drag down or press ESC to close</h4>
+    </div>
+    <div>
+      <md-list flex layout="row" layout-align="center center">
+        <md-list-item ng-repeat="item in items">
+          <md-button class="md-grid-item-content" ng-click="listItemClick($index)">
+            <md-icon md-svg-src="{{item.icon}}"></md-icon>
+            <div class="md-grid-text"> {{ item.name }} </div>
+          </md-button>
+        </md-list-item>
+      </md-list>
+    </div>
+  </md-bottom-sheet>
 </div>

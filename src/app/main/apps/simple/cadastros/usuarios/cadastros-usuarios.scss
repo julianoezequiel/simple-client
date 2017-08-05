@@ -1,38 +1,61 @@
 #cadastros-usuarios {
 
-    .add-user-button {
-        position: relative;
-   		right: 90%;
-    	top: 106px;
-       }
+  // .header {
+  //   min-height: 90px !important;
+  //   height: 90px !important;
+  // }
+  >.center
 
-       .pull-left{
-         float: left !important;
-       }
+  >.header {
+    background: transparent;
 
-        md-fab-toolbar.md-right md-fab-trigger.align-with-text {
-        left: 7px; }
-    
+    .breadcrumb {
+            margin-bottom: 16px;
+            font-weight: 500;
+            color: rgba(0, 0, 0, 0.54);
+
+            md-icon {
+                margin: 0;
+            }
+
+            .separator {
+                margin: 0 8px;
+            }
+        }
+
+        .title {
+            font-size: 34px;
+        }
+    }
+  }
+
+  .breadcrumb {
+    margin-top: 12px;
+  }
+
+  .add-user-button {
+    position: relative;
+    right: 90%;
+    top: 106px;
+  }
+
+  .pull-left {
+    float: left !important;
+  }
+
+  .content {
+    max-width: 100%;
+  }
 }
 
 // RESPONSIVE
 @media screen and (min-width: $layout-breakpoint-md) {
 
-    #cadastros-usuarios {
-
-      
-
-        }
-    
-
+  #cadastros-usuarios {}
 }
 
 // RESPONSIVE
 @media screen and (max-width: $layout-breakpoint-xs) {
 
-    #cadastros-usuarios {
-
-      
-    }
+  #cadastros-usuarios {}
 }
-

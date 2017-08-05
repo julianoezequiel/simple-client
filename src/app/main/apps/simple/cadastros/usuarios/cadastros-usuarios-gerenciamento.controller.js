@@ -1,37 +1,33 @@
-(function ()
-{
-    'use strict';
+(function() {
+  'use strict';
 
-    angular
-        .module('app.cadastros.usuarios')
-        .controller('UsuarioGerenciamentoController', UsuarioGerenciamentoController);
+  angular
+    .module('app.cadastros.usuarios')
+    .controller('UsuarioGerenciamentoController', UsuarioGerenciamentoController);
 
-    /** @ngInject */
-    function UsuarioGerenciamentoController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
-        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios,$stateParams,$mdBottomSheet)
-    {
-        var vm = this ;
+  /** @ngInject */
+  function UsuarioGerenciamentoController($rootScope, $mdToast, api, $interval, $mdSidenav, $scope, $mdDialog, $mdMedia, $document, $timeout, Usuarios, $stateParams, $mdBottomSheet) {
+    var vm = this;
 
-       
-        vm.isOpen = true;
-        vm.selectedMode = 'md-scale';
-        vm.selectedDirection = 'left';
 
-        vm.usuario = Usuarios.data.filter(function(usuario){
-            return usuario.id == $stateParams.id;
-        })[0];
+    vm.isOpen = true;
+    vm.selectedMode = 'md-scale';
+    vm.selectedDirection = 'right';
 
-        console.log('modulo UsuarioGerenciamentoController');
-        console.log(vm.usuario);
+    vm.usuario = Usuarios.data.filter(function(usuario) {
+      return usuario.id == $stateParams.id;
+    })[0];
 
-      vm.isOpen = false;
-      vm.demo = {
-        isOpen: false,
-        count: 0,
-        selectedDirection: 'right'
-      };
+    console.log('modulo UsuarioGerenciamentoController');
+    console.log(vm.usuario);
 
-    
-}
+    vm.voltar = function(){
+      $rootScope.state.go('app.simple-cadastros-usuarios');
+    }
+
+    vm.activeMailPaneIndex = 0;
+    vm.dynamicHeight = false;
+
+  }
 
 })();

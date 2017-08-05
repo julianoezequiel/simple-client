@@ -41,7 +41,8 @@
     "jsPlumb": "2.0.5",
     "angular-gantt": "#339cc086b05a7fada3a81f9f55259f387d8903f9",
     "moment-range": "2.1.0",
-    "ngstorage": "^0.3.11"
+    "ngstorage": "^0.3.11",
+    "material-design-icons": "^3.0.1"
   },
   "devDependencies": {
     "angular-mocks": "1.5.0"
