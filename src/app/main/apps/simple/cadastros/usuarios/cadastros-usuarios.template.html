@@ -14,7 +14,9 @@
           <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
           <span class="parent">Usuários</span>
         </div>
-        <div class="title">Cadastrar Usuário</div>
+        <div class="title">Usuários
+          <md-icon md-font-icon="icon-account-circle" class="s40"></md-icon>
+        </div>        
       </div>
     </div>
     <!-- / TOP BACKGROUND -->
@@ -22,35 +24,31 @@
     <div class="content-card" layout="column" flex>
       <!-- CONTENT TOOLBAR -->
       <div class="toolbar" layout="row" layout-align="start center">
-        
         <md-button class="md-icon-button" aria-label="More" ng-click="vm.voltar()">
           <md-tooltip md-direction="top">
             Voltar
           </md-tooltip>
           <md-icon md-font-icon="icon-keyboard-backspace"></md-icon>
         </md-button>
-
+        <md-divider class="vertical-divider"></md-divider>
         <md-button class="md-icon-button" ng-click="vm.novo()" aria-label="Add User">
-         <md-tooltip md-direction="top">
+          <md-tooltip md-direction="top">
             Adicionar
           </md-tooltip>
           <md-icon md-font-icon="icon-plus"></md-icon>
         </md-button>
-
-        <md-divider class="vertical-divider"></md-divider>
-
-        <md-button class="md-icon-button" aria-label="Settings">
+        <!-- <md-button class="md-icon-button" aria-label="Settings">
           <md-tooltip md-direction="top">
             Salvar
           </md-tooltip>
           <md-icon md-font-icon="icon-content-save"></md-icon>
-        </md-button>
-        <md-button class="md-icon-button" aria-label="Favorite">
+        </md-button> -->
+        <!-- <md-button class="md-icon-button" aria-label="Favorite">
           <md-tooltip md-direction="top">
             Editar
           </md-tooltip>
           <md-icon md-font-icon="icon-pencil"></md-icon>
-        </md-button>
+        </md-button> -->
         <md-button class="md-icon-button" aria-label="More">
           <md-tooltip md-direction="top">
             Atualizar
@@ -63,35 +61,14 @@
           </md-tooltip>
           <md-icon md-font-icon="icon-printer"></md-icon>
         </md-button>
-        <md-divider class="vertical-divider"></md-divider>
+        <!-- <md-divider class="vertical-divider"></md-divider>
         <md-button class="md-icon-button" aria-label="More">
           <md-tooltip md-direction="top">
             Excluir
           </md-tooltip>
           <md-icon md-font-icon="icon-delete"></md-icon>
-        </md-button>
+        </md-button> -->
       </div>
-      <!-- <md-fab-toolbar md-open="vm.isOpen" count="vm.count"
-                          md-direction="{{vm.selectedDirection}}">
-            <md-fab-trigger class="align-with-text">
-              <md-button aria-label="menu" class="md-fab md-primary">
-                <md-icon  md-font-icon="icon-view-headline"></md-icon>
-              </md-button>
-            </md-fab-trigger>
-            <md-toolbar>
-              <md-fab-actions class="md-toolbar-tools">
-                <md-button aria-label="comment" class="md-icon-button">
-                  <md-icon md-font-icon="icon-pencil"></md-icon>
-                </md-button>
-                <md-button aria-label="label" class="md-icon-button">
-                  <md-icon md-font-icon="icon-delete"></md-icon>
-                </md-button>
-                <md-button aria-label="photo" class="md-icon-button">
-                  <md-icon md-font-icon="icon-save"></md-icon>
-                </md-button>
-              </md-fab-actions>
-            </md-toolbar>
-        </md-fab-toolbar> -->
       <!-- / CONTENT TOOLBAR -->
       <!-- CONTENT -->
       <md-content class="content" flex ms-scroll>

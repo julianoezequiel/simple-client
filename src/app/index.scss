@@ -20,3 +20,10 @@ md-toast.md-success-toast-theme div.md-toast-content{
     color: white !important;
     background-color: green !important;
 }
+
+.vertical-divider {
+  border-top-width: 0  !important;
+  border-right-width: 1px !important;
+  border-right-style: solid !important;
+  height: 100% !important;
+}
