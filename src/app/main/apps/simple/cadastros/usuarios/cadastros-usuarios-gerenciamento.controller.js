@@ -6,7 +6,10 @@
     .controller('UsuarioGerenciamentoController', UsuarioGerenciamentoController);
 
   /** @ngInject */
-  function UsuarioGerenciamentoController($rootScope, $mdToast, api, $interval, $mdSidenav, $scope, $mdDialog, $mdMedia, $document, $timeout, Usuarios, $stateParams, $mdBottomSheet) {
+  function UsuarioGerenciamentoController($rootScope, $mdToast, api, $interval,
+    $mdSidenav, $scope, $mdDialog, $mdMedia, $document, $timeout,
+    Usuarios, $stateParams, $mdBottomSheet, Permissoes,CadastrosDiversos) {
+
     var vm = this;
 
 
@@ -28,32 +31,12 @@
     vm.activeMailPaneIndex = 0;
     vm.dynamicHeight = false;
 
-    vm.situacoes = ['Ativo', 'Inativo'];
+    vm.situacoes = CadastrosDiversos.situacoes;
+
     vm.usuario = new Object();
     vm.usuario.senha = '';
 
-    vm.permissoes =[{
-      id:1,
-      descricao:'Cadastro de Operadores'
-    },{
-      id:2,
-      descricao:'Cadastro de Clientes'
-    },{
-      id:1,
-      descricao:'Cadastro de Operadores'
-    },{
-      id:1,
-      descricao:'Cadastro de Operadores'
-    },{
-      id:1,
-      descricao:'Cadastro de Operadores'
-    },{
-      id:1,
-      descricao:'Cadastro de Operadores'
-    },{
-      id:1,
-      descricao:'Cadastro de Operadores'
-    }]
+    vm.permissoes = Permissoes;
 
     vm.items = [1, 2, 3, 4, 5];
     vm.selected = [];

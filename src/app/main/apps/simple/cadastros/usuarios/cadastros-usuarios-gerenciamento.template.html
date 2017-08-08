@@ -117,8 +117,8 @@
                       <md-input-container flex>
                         <label>Situação</label>
                         <md-select ng-model="vm.usuario.situacao">
-                          <md-option ng-repeat="situacao in vm.situacoes" value="{{situacao}}">
-                            {{situacao}}
+                          <md-option ng-repeat="situacao in vm.situacoes" value="{{situacao.id}}">
+                            {{situacao.descricao}}
                           </md-option>
                         </md-select>
                         <div ng-messages="usuarioForm.situacao.$error" role="alert" multiple>
@@ -141,7 +141,7 @@
               <md-content class="md-padding">
                 <!-- / BASIC FORM -->
                 <!-- BASIC FORM DATA -->
-                <div layout="row" class="md-whiteframe-1dp" flex>
+                <div layout="row" class="md-whiteframe-1dp" flex="100" layout-wrap>
                   <!-- <div class="form-title">Permissões:</div> -->
                   <div flex layout="column" >
                     <fieldset class="standard">

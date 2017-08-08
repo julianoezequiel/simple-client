@@ -1,0 +1,31 @@
+  {
+    "id": 1,
+    "tipo": "usuarios",
+    "acesso": true,
+    "descricao": "Cadastro de usuários",
+    "modulo": {
+      "id":1,
+      "descricao":"Cadastro"
+    }
+  },
+  {
+    "id": 2,
+    "tipo": "clientes",
+    "acesso": false,
+    "descricao": "Cadastro de clientes",
+    "modulo": {
+      "id":1,
+      "descricao":"Cadastro"
+    }
+  }
+  {
+    "id": 3,
+    "tipo": "",
+    "acesso": false,
+    "descricao": "Entrada de produtos",
+    "modulo": {
+      "id":2,
+      "descricao":"Administrativo"
+    }
+  }
+
