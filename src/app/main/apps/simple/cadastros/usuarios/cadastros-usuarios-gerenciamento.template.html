@@ -1,10 +1,7 @@
-<div id="cadastros-usuarios" class="page-layout carded fullwidth doc-page element-doc-page" layout="row">
-  
- <!-- TOP BACKGROUND -->
-    <div class="top-bg md-accent-bg"></div>
-    <!-- / TOP BACKGROUND -->
-
-
+<div id="cadastros-usuarios" class="page-layout carded fullwidth single-scroll doc-page element-doc-page" layout="row">
+  <!-- TOP BACKGROUND -->
+  <div class="top-bg md-accent-bg"></div>
+  <!-- / TOP BACKGROUND -->
   <!-- CENTER -->
   <div class="center" layout="column" flex>
     <!-- TOP BACKGROUND -->
@@ -25,157 +22,181 @@
     <div class="content-card" layout="column" flex>
       <!-- CONTENT TOOLBAR -->
       <div class="toolbar" layout="row" layout-align="start center">
-           <md-button class="md-icon-button" aria-label="More" ng-click="vm.voltar()">
-              <md-tooltip md-direction="top">
-                Voltar
-              </md-tooltip>
-              <md-icon md-font-icon="icon-keyboard-backspace"></md-icon>
-            </md-button>
-            <md-divider class="vertical-divider"></md-divider>
-            <md-button class="md-icon-button" aria-label="Settings">
-              <md-tooltip md-direction="top">
-                Salvar
-              </md-tooltip>
-              <md-icon md-font-icon="icon-content-save"></md-icon>
-            </md-button>
-            <md-button class="md-icon-button" aria-label="Favorite">
-              <md-tooltip md-direction="top">
-                Editar
-              </md-tooltip>
-              <md-icon md-font-icon="icon-pencil"></md-icon>
-            </md-button>
-            <md-button class="md-icon-button" aria-label="More">
-              <md-tooltip md-direction="top">
-                Atualizar
-              </md-tooltip>
-              <md-icon md-font-icon="icon-refresh"></md-icon>
-            </md-button>
-            <md-button class="md-icon-button" aria-label="More">
-              <md-tooltip md-direction="top">
-                Imprimir
-              </md-tooltip>
-              <md-icon md-font-icon="icon-printer"></md-icon>
-            </md-button>
-            <md-divider class="vertical-divider"></md-divider>
-            <md-button class="md-icon-button" aria-label="More">
-              <md-tooltip md-direction="top">
-                Excluir
-              </md-tooltip>
-              <md-icon md-font-icon="icon-delete"></md-icon>
-            </md-button>
-          </div>
-        <!-- <md-fab-toolbar md-open="vm.isOpen" count="vm.count"
-		                  md-direction="{{vm.selectedDirection}}">
-		    <md-fab-trigger class="align-with-text">
-		      <md-button aria-label="menu" class="md-fab md-primary">
-		        <md-icon  md-font-icon="icon-view-headline"></md-icon>
-		      </md-button>
-		    </md-fab-trigger>
-		    <md-toolbar>
-		      <md-fab-actions class="md-toolbar-tools">
-		        <md-button aria-label="comment" class="md-icon-button">
-		          <md-icon md-font-icon="icon-pencil"></md-icon>
-		        </md-button>
-		        <md-button aria-label="label" class="md-icon-button">
-		          <md-icon md-font-icon="icon-delete"></md-icon>
-		        </md-button>
-		        <md-button aria-label="photo" class="md-icon-button">
-		          <md-icon md-font-icon="icon-save"></md-icon>
-		        </md-button>
-		      </md-fab-actions>
-		    </md-toolbar>
-		</md-fab-toolbar> -->
+        <md-button class="md-icon-button" aria-label="More" ng-click="vm.voltar()">
+          <md-tooltip md-direction="top">
+            Voltar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-keyboard-backspace"></md-icon>
+        </md-button>
+        <md-divider class="vertical-divider"></md-divider>
+        <md-button class="md-icon-button" aria-label="salvar" ng-disabled="usuarioForm.$invalid || usuarioForm.$pristine">
+          <md-tooltip md-direction="top">
+            Salvar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-content-save" aria-label="salvar"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="Favorite">
+          <md-tooltip md-direction="top">
+            Editar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-pencil"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-tooltip md-direction="top">
+            Atualizar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-refresh"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-tooltip md-direction="top">
+            Imprimir
+          </md-tooltip>
+          <md-icon md-font-icon="icon-printer"></md-icon>
+        </md-button>
+        <md-divider class="vertical-divider"></md-divider>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-tooltip md-direction="top">
+            Excluir
+          </md-tooltip>
+          <md-icon md-font-icon="icon-delete"></md-icon>
+        </md-button>
+      </div>
       <!-- / CONTENT TOOLBAR -->
       <!-- CONTENT -->
       <md-content class="content" flex ms-scroll>
-        
-         <div layout="row">
-
-            <!-- BASIC FORM -->
-            <div class="form-wrapper md-whiteframe-1dp" flex="60">
-
-                <form name="basicForm" class="md-inline-form" novalidate>
-
-                    <div class="form-title">Optional form title</div>
-
+        <div layout="row">
+          <md-tabs md-dynamic-height md-border-bottom flex>
+            <md-tab label="Dados básico">
+              <md-content class="md-padding">
+                <!-- BASIC FORM -->
+                <div class="form-wrapper md-whiteframe-1dp" flex="50" flex-gt-sm="50" flex-gt-xs="100">
+                  <form name="usuarioForm" class="md-inline-form" novalidate>
                     <div layout="column" layout-gt-sm="row">
-                        <md-input-container flex>
-                            <input type="text" name="firstname" ng-model="vm.basicForm.firstname"
-                                   placeholder="Firstname"
-                                   required>
-                            <div ng-messages="basicForm.firstname.$error"
-                                 role="alert">
-                                <div ng-message="required">
-                                    <span>Firstname field is required.</span>
-                                </div>
-                            </div>
-                        </md-input-container>
-
-                        <md-input-container flex>
-                            <input type="text" name="lastname" ng-model="vm.basicForm.lastname" placeholder="Lastname"
-                                   required>
-                            <div ng-messages="basicForm.lastname.$error"
-                                 role="alert">
-                                <div ng-message="required">
-                                    <span>Lastname field is required.</span>
-                                </div>
-                            </div>
-                        </md-input-container>
+                      <md-input-container flex>
+                        <input type="text" name="nome" ng-model="vm.usuario.nome" placeholder="Nome" required>
+                        <div ng-messages="usuarioForm.nome.$error" role="alert">
+                          <div ng-message="required">
+                            <span>O nome é obrigatório.</span>
+                          </div>
+                        </div>
+                      </md-input-container>
                     </div>
-
+                    <div layout="column" layout-gt-sm="row">
+                      <md-input-container flex>
+                        <input type="email" name="email" ng-model="vm.usuario.email" placeholder="Email" ng-pattern="/^.+@.+\..+$/" required>
+                        <div ng-messages="usuarioForm.email.$error" role="alert" multiple>
+                          <div ng-message="required">
+                            <span>Email é obrigatório</span>
+                          </div>
+                          <div ng-message="pattern">
+                            <span>Email deve ser válido!</span>
+                          </div>
+                        </div>
+                      </md-input-container>
+                    </div>
+                    <div layout="column" layout-gt-sm="row" flex>
+                      <md-input-container flex flex-gt-xs="50">
+                        <input type="password" name="senha" ng-model="vm.usuario.senha" placeholder="Senha" required>
+                        <div ng-messages="usuarioForm.senha.$error" role="alert">
+                          <div ng-message="required">
+                            <span>Senha é obrigatória.</span>
+                          </div>
+                        </div>
+                      </md-input-container>
+                      <md-input-container flex="100" flex-gt-xs="50">
+                        <input type="password" name="senhaConfirma" ng-pattern="\b{{vm.usuario.senha}}\b" ng-model="vm.usuario.senhaConfirma" placeholder="Senha (Confirmar)" required>
+                        <div ng-messages="usuarioForm.senhaConfirma.$error" role="alert">
+                          <div ng-message="required">
+                            <span>Confirmação de senha obrigatória.</span>
+                          </div>
+                          <div ng-message="pattern">Senha não conferem!</div>
+                        </div>
+                      </md-input-container>
+                    </div>
                     <div layout="column" layout-gt-xs="row">
-                        <md-input-container flex>
-                            <label>City</label>
-                            <input type="text" name="city" ng-model="vm.basicForm.city">
-                        </md-input-container>
-
-                        <md-input-container flex>
-                            <label>State</label>
-                            <md-select ng-model="vm.basicForm.state">
-                                <md-option ng-repeat="state in vm.states" value="{{state.abbrev}}">
-                                    {{state.abbrev}}
-                                </md-option>
-                            </md-select>
-                        </md-input-container>
-
-                        <md-input-container flex>
-                            <label>Postal Code</label>
-                            <input name="postalcode" ng-model="vm.basicForm.postalCode" placeholder="12345"
-                                   required ng-pattern="/^[0-9]{5}$/" md-maxlength="5">
-                            <div ng-messages="basicForm.postalcode.$error" role="alert" multiple>
-                                <div ng-message="required"><span>You must supply a postal code.</span></div>
-                                <div ng-message="pattern"><span>That doesn't look like a valid postal code.</span></div>
-                                <div ng-message="md-maxlength">
-                                    <span>Postal code can't be longer than 5 characters.</span>
-                                </div>
-                            </div>
-                        </md-input-container>
+                      <md-input-container flex>
+                        <label>Situação</label>
+                        <md-select ng-model="vm.usuario.situacao">
+                          <md-option ng-repeat="situacao in vm.situacoes" value="{{situacao}}">
+                            {{situacao}}
+                          </md-option>
+                        </md-select>
+                        <div ng-messages="usuarioForm.situacao.$error" role="alert" multiple>
+                          <div ng-message="required"><span>Situação é obrigatória.</span></div>
+                        </div>
+                      </md-input-container>
                     </div>
-
                     <md-input-container class="md-block">
-                        <label>Biography</label>
-                        <textarea ng-model="vm.basicForm.biography" columns="1" md-maxlength="150" rows="5"></textarea>
+                      <label>Observações</label>
+                      <textarea ng-model="vm.usuario.observacoes" columns="1" md-maxlength="150" rows="5"></textarea>
                     </md-input-container>
-
-                    <md-button type="submit" class="md-raised md-accent" aria-label="Submit"
-                               ng-disabled="basicForm.$invalid || basicForm.$pristine">
-                        Submit
+                    <md-button type="submit" class="md-raised md-accent" aria-label="Submit" ng-disabled="usuarioForm.$invalid || usuarioForm.$pristine">
+                      Salvar
                     </md-button>
-                </form>
-
-            </div>
-            <!-- / BASIC FORM -->
-
-            <!-- BASIC FORM DATA -->
-            <div class="form-wrapper form-data-wrapper md-whiteframe-1dp" flex="40">
-                <div class="form-title">Form ng-model data</div>
-                <div class="json-data-wrapper">
-                    <pre>{{vm.basicForm | json}}</pre>
+                  </form>
                 </div>
-            </div>
-            <!-- / BASIC FORM DATA -->
+              </md-content>
+            </md-tab>
+            <md-tab label="Permissões">
+              <md-content class="md-padding">
+                <!-- / BASIC FORM -->
+                <!-- BASIC FORM DATA -->
+                <div layout="row" class="md-whiteframe-1dp" flex>
+                  <!-- <div class="form-title">Permissões:</div> -->
+                  <div flex layout="column" >
+                    <fieldset class="standard">
+                      <legend>Cadastros:</legend>
+                      <div layout="column" flex>
+                        <div flex ng-repeat="permissao in vm.permissoes">
+                          <md-checkbox ng-click="vm.toggle(permissao, selected)">
+                            {{ permissao.descricao }}
+                          </md-checkbox>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div flex layout="column">
+                    <fieldset class="standard">
+                      <legend>Administrativo:</legend>
+                      <div layout="column" flex>
+                        <div flex ng-repeat="permissao in vm.permissoes">
+                          <md-checkbox ng-click="vm.toggle(permissao, selected)">
+                            {{ permissao.descricao }}
+                          </md-checkbox>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div flex layout="column" >
+                    <fieldset class="standard">
+                      <legend>Relatórios:</legend>
+                      <div layout="column" flex>
+                        <div flex ng-repeat="permissao in vm.permissoes">
+                          <md-checkbox ng-click="vm.toggle(permissao, selected)">
+                            {{ permissao.descricao }}
+                          </md-checkbox>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div flex layout="column" >
+                    <fieldset class="standard">
+                      <legend>Configurações:</legend>
+                      <div layout="column" flex>
+                        <div flex ng-repeat="permissao in vm.permissoes">
+                          <md-checkbox ng-click="vm.toggle(permissao, selected)">
+                            {{ permissao.descricao }}
+                          </md-checkbox>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                </div>
+                <!-- / BASIC FORM DATA -->
+              </md-content>
+            </md-tab>
+          </md-tabs>
         </div>
-        
       </md-content>
       <!-- / CONTENT -->
     </div>
