@@ -36,7 +36,7 @@
     vm.usuario = new Object();
     vm.usuario.senha = '';
 
-    vm.permissoes = Permissoes;
+    vm.permissoes = Permissoes.permissoes;
 
     vm.items = [1, 2, 3, 4, 5];
     vm.selected = [];

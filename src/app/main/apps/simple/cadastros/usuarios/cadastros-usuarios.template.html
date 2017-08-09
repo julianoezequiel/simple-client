@@ -61,6 +61,28 @@
           </md-tooltip>
           <md-icon md-font-icon="icon-printer"></md-icon>
         </md-button>
+        <div class="search" flex flex-offset="15" layout="row" layout-align="start center">
+          <md-button class="md-icon-button" ng-click="">
+            <md-icon md-font-icon="icon-magnify" class="icon search-icon"></md-icon>
+          </md-button>
+          <input class="search-input" ng-model="vm.search" type="text" placeholder="Pesquizar..." translate translate-attr-placeholder="Pesquizar" flex>
+        </div>
+        <md-menu class="search-settings" md-position-mode="target-right target">
+          <md-button class="md-icon-button" ng-click="$mdOpenMenu()" aria-label="Search settings" translate translate-attr-aria-label="SEARCH.SEARCH_SETTINGS">
+            <md-icon md-menu-origin md-menu-align-target md-font-icon="icon-cog" class="icon s16"></md-icon>
+          </md-button>
+          <md-menu-content width="3" class="pl-15">
+            <md-menu-item>
+              <md-checkbox ng-click="vm.toggle(permissao, selected)">
+                Nome
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox ng-click="vm.toggle(permissao, selected)">
+                Email
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
         <!-- <md-divider class="vertical-divider"></md-divider>
         <md-button class="md-icon-button" aria-label="More">
           <md-tooltip md-direction="top">
@@ -73,7 +95,7 @@
       <!-- CONTENT -->
       <md-content class="content" flex ms-scroll>
         <div class="white-bg md-whiteframe-4dp">
-          <table class="dataTable row-border hover" datatable="ng" dt-options="vm.dtOptions">
+          <table class="dataTable row-border hover condensed" datatable="ng" dt-options="vm.dtOptions">
             <thead>
               <tr>
                 <th class="secondary-text">
