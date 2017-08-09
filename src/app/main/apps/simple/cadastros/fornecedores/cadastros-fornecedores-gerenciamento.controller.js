@@ -12,7 +12,7 @@
     var vm = this;
 
 
-    vm.fornecedores = Fornecedores;
+    vm.fornecedores = Fornecedores.data;
 
 
   }

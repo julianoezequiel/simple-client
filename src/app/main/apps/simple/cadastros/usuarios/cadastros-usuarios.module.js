@@ -19,7 +19,7 @@
       },
       resolve: {
         Usuarios: function(msApi) {
-          return msApi.resolve('tables.usuarios@get');
+          return msApi.resolve('usuarios@get');
         }
       },
       bodyClass: 'cadastros-usuarios'
@@ -36,7 +36,7 @@
       },
       resolve: {
         Usuarios: function(msApi, $stateParams) {
-          return msApi.resolve('tables.usuarios@get');
+          return msApi.resolve('usuarios@get');
         },
         Permissoes: function(msApi, $stateParams) {
           return msApi.resolve('permissoes@get');
@@ -49,7 +49,7 @@
     });
 
     // Api        
-    msApiProvider.register('tables.usuarios', ['app/data/tables/usuarios.json']);
+    msApiProvider.register('usuarios', ['app/data/simple/usuarios.json']);
     msApiProvider.register('permissoes', ['app/data/simple/permissoes.json']);
     msApiProvider.register('CadastrosDiversos', ['app/data/simple/CadastrosDiversos.json']);
 

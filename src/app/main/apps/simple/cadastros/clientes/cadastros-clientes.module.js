@@ -23,7 +23,7 @@
             resolve: {
                 Clientes: function (msApi)
                 {
-                    return msApi.resolve('tables.clientes@get');
+                    return msApi.resolve('clientes@get');
                 }
             },
             bodyClass: 'cadastros-clientes'
@@ -41,7 +41,7 @@
              resolve: {
                 Clientes: function (msApi)
                 {
-                    return msApi.resolve('tables.clientes@get');
+                    return msApi.resolve('clientes@get');
                 }
             },
             bodyClass: 'cadastros-clientes'
@@ -49,7 +49,7 @@
 
 
         // Api        
-        msApiProvider.register('tables.clientes', ['app/data/tables/clientes.json']);    
+        msApiProvider.register('clientes', ['app/data/simple/clientes.json']);    
 
     }
 

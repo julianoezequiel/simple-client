@@ -1,41 +1,172 @@
   {
-    "id": 1,
-    "tipo": "usuarios",
-    "acesso": true,
-    "descricao": "Cadastro de usuários",
-    "modulo": {
-      "id":1,
-      "descricao":"Cadastro"
-    }
-  },
-  {
-    "id": 2,
-    "tipo": "clientes",
-    "acesso": false,
-    "descricao": "Cadastro de clientes",
-    "modulo": {
-      "id":1,
-      "descricao":"Cadastro"
-    }
-  },
-  {
-    "id": 3,
-    "tipo": "",
-    "acesso": false,
-    "descricao": "Entrada de produtos",
-    "modulo": {
-      "id":2,
-      "descricao":"Administrativo"
-    }
-  },
-   {
-    "id": 4,
-    "tipo": "",
-    "acesso": false,
-    "descricao": "",
-    "modulo": {
-      "id":2,
-      "descricao":"Configurações"
+    "permissoes":
+    {
+
+      "cadastros":
+      {
+        "id": 1,
+        "descricao": "Cadastros",
+        "permissoes": [
+        {
+          "id": 1,
+          "tipo": "usuarios",
+          "acesso": true,
+          "descricao": "Cadastro de usuários"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Cadastro de clientes"
+        },
+        {
+          "id": 3,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Cadastro de empresas"
+        },
+        {
+          "id": 4,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Cadastro de fornecedores"
+        },
+        {
+          "id": 4,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": ""
+        }]
+      },
+
+      "financeiro":
+      {
+        "id": 2,
+        "descricao": "Financeiro",
+        "permissoes": [
+        {
+          "id": 1,
+          "tipo": "usuarios",
+          "acesso": true,
+          "descricao": "Compras"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Contas a receber"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Contas a pagar"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Fluxo de caixa"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Movimentação diária"
+        }]
+      },
+
+      "controle_estoque":
+      {
+        "id": 3,
+        "descricao": "Controle de Estoque",
+        "permissoes": [
+        {
+          "id": 1,
+          "tipo": "usuarios",
+          "acesso": true,
+          "descricao": "Cadastro de usuários"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Cadastro de clientes"
+        },
+        {
+          "id": 1,
+          "tipo": "usuarios",
+          "acesso": true,
+          "descricao": "Cadastro de usuários"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Cadastro de clientes"
+        }]
+      },
+
+      "relatorios":
+      {
+        "id": 4,
+        "descricao": "Relatórios",
+        "permissoes": [
+        {
+          "id": 1,
+          "tipo": "usuarios",
+          "acesso": true,
+          "descricao": "Cadastro de usuários"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Cadastro de clientes"
+        },
+        {
+          "id": 1,
+          "tipo": "usuarios",
+          "acesso": true,
+          "descricao": "Cadastro de usuários"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Cadastro de clientes"
+        }]
+      },
+
+      "configuracoes":
+      {
+        "id": 5,
+        "descricao": "Configurações",
+        "permissoes": [
+        {
+          "id": 1,
+          "tipo": "usuarios",
+          "acesso": true,
+          "descricao": "Cadastro de usuários"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Cadastro de clientes"
+        },
+        {
+          "id": 1,
+          "tipo": "usuarios",
+          "acesso": true,
+          "descricao": "Cadastro de usuários"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Cadastro de clientes"
+        }]
+      }
     }
   }
-
