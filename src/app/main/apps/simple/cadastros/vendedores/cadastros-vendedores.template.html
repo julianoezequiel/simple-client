@@ -1,1 +1,105 @@
-<h1 id="cadastros-clientes">Cadastros Cliente</h1>
+<div id="cadastros-vendedores" class="page-layout carded fullwidth doc-page element-doc-page" layout="row">
+  <!-- TOP BACKGROUND -->
+  <div class="top-bg md-accent-bg"></div>
+  <!-- / TOP BACKGROUND -->
+  <!-- CENTER -->
+  <div class="center" layout="column" flex>
+    <!-- TOP BACKGROUND -->
+    <div class="header md-accent-bg" layout="row" layout-align="space-between">
+      <div layout="column" layout-align="center start">
+        <div class="breadcrumb" layout="row" layout-align="start center">
+          <md-icon md-font-icon="icon-home" class="s16"></md-icon>
+          <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+          <span class="parent">Cadastros</span>
+          <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
+          <span class="parent">Vendedores</span>
+        </div>
+        <div class="title">Vendedores
+          <md-icon md-font-icon="icon-wallet-travel" class="s40"></md-icon>
+        </div>
+      </div>
+    </div>
+    <!-- / TOP BACKGROUND -->
+    <!-- CONTENT CARD -->
+    <div class="content-card" layout="column" flex>
+      <!-- CONTENT TOOLBAR -->
+      <div class="toolbar" layout="row" layout-align="start center">
+        <md-button class="md-icon-button" aria-label="More" ng-click="vm.voltar()">
+          <md-tooltip md-direction="top">
+            Voltar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-keyboard-backspace"></md-icon>
+        </md-button>
+        <md-divider class="vertical-divider"></md-divider>
+        <md-button class="md-icon-button" ng-click="vm.novo()" aria-label="Add User">
+          <md-tooltip md-direction="top">
+            Adicionar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-plus"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-tooltip md-direction="top">
+            Atualizar
+          </md-tooltip>
+          <md-icon md-font-icon="icon-refresh"></md-icon>
+        </md-button>
+        <md-button class="md-icon-button" aria-label="More">
+          <md-tooltip md-direction="top">
+            Imprimir
+          </md-tooltip>
+          <md-icon md-font-icon="icon-printer"></md-icon>
+        </md-button>
+      </div>
+      <!-- / CONTENT TOOLBAR -->
+      <!-- CONTENT -->
+      <md-content class="content" flex ms-scroll>
+        <div class="white-bg md-whiteframe-4dp">
+          <table class="dataTable row-border hover" datatable="ng" dt-options="vm.dtOptions">
+            <thead>
+              <tr>
+                <th class="secondary-text">
+                  <div class="table-header">
+                    <span class="column-title">Nome</span>
+                  </div>
+                </th>
+                <th class="secondary-text">
+                  <div class="table-header">
+                    <span class="column-title">CPF/CNPJ</span>
+                  </div>
+                </th>
+                <th class="secondary-text">
+                  <div class="table-header">
+                    <span class="column-title">Ações</span>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="" ng-repeat="cliente in ::vm.clientes">
+                <td>{{ cliente.nome }}</td>
+                <td>{{ cliente.numeroDocumento }}</td>
+                <td>
+                  <md-button ng-click="vm.editar(cliente.id)" aria-label="editar" class="md-fab md-raised md-mini">
+                    <md-tooltip md-direction="top">
+                      Editar
+                    </md-tooltip>
+                    <md-icon md-font-icon="icon-pencil" aria-label="editar"></md-icon>
+                  </md-button>
+                  <md-button aria-label="excluir" class="md-fab md-raised md-mini">
+                    <md-tooltip md-direction="top">
+                      Excluir
+                    </md-tooltip>
+                    <md-icon md-font-icon="icon-delete" aria-label="excluir"></md-icon>
+                  </md-button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          </div>
+        </div>
+      </md-content>
+      <!-- / CONTENT -->
+    </div>
+    <!-- / CONTENT CARD -->
+  </div>
+  <!-- / CENTER -->
+</div>

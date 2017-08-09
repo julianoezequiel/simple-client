@@ -33,8 +33,12 @@
             $rootScope.state.go('app.simple-cadastros-clientes-gerenciamento');
         }
 
+        vm.voltar = function(){
+            $rootScope.state.go('app.simple_painel-controle');
+        }
+
         vm.dtOptions = {
-            'dom'       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
+            'dom'       : '<"top">rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
             'pagingType': 'simple',
             'autoWidth' : false,
             'responsive': true,

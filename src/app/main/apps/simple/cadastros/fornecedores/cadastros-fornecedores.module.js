@@ -1,37 +1,55 @@
-(function ()
-{
-    'use strict';
+(function() {
+  'use strict';
 
-    angular
-        .module('app.cadastros.fornecedores', [
+  angular
+    .module('app.cadastros.fornecedores', [
 
-        ])
-        .config(config);
+    ])
+    .config(config);
 
-    /** @ngInject */
-    function config(msNavigationServiceProvider)
-    {
+  /** @ngInject */
+  function config($stateProvider, msApiProvider) {
 
-        // msNavigationServiceProvider.saveItem('simple', {
-        //     title : 'Painel de Controle',
-        //     icon  : 'icon-tile-four',
-        //     weight: 1
-        // });
+    // State
+    $stateProvider.state('app.simple-cadastros-fornecedores', {
+      url: '/cadastros/fornecedores',
+      views: {
+        'content@app': {
+          templateUrl: 'app/main/apps/simple/cadastros/fornecedores/cadastros-fornecedores.template.html',
+          controller: 'FornecedorController as vm'
+        }
+      },
+      resolve: {
+        Fornecedores: function(msApi) {
+          return msApi.resolve('fornecedores@get');
+        }
+      },
+      bodyClass: 'cadastros-fornecedores'
+    });
 
-        msNavigationServiceProvider.saveItem('cadastros.empresas', {
-            title: 'Empresas',
-            state: 'app.dashboards_project'
-        });
+    // State
+    $stateProvider.state('app.simple-cadastros-fornecedores-gerenciamento', {
+      url: '/cadastros/fornecedores/gerenciamento/:id',
+      views: {
+        'content@app': {
+          templateUrl: 'app/main/apps/simple/cadastros/fornecedores/cadastros-fornecedores-gerenciamento.template.html',
+          controller: 'FornecedorsGerenciamentoController as vm'
+        }
+      },
+      resolve: {
+        Fornecedores: function(msApi) {
+          return msApi.resolve('fornecedores@get');
+        }
+      },
+      bodyClass: 'cadastros-fornecedores'
+    });
 
-        // msNavigationServiceProvider.saveItem('apps.dashboards.server', {
-        //     title: 'Server',
-        //     state: 'app.dashboards_server'
-        // });
 
-        // msNavigationServiceProvider.saveItem('apps.dashboards.analytics', {
-        //     title: 'Analytics',
-        //     state: 'app.dashboards_analytics'
-        // });
-    }
+    // Api        
+    msApiProvider.register('fornecedores', ['app/data/simple/fornecedores.json']);
+
+
+
+  }
 
 })();

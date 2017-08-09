@@ -8,7 +8,7 @@
         .config(config);
 
     /** @ngInject */
-    function config(msNavigationServiceProvider,$stateProvider,msApiProvider)
+    function config($stateProvider,msApiProvider)
     {
 
        // State

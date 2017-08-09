@@ -17,7 +17,7 @@
       "id":1,
       "descricao":"Cadastro"
     }
-  }
+  },
   {
     "id": 3,
     "tipo": "",
@@ -26,6 +26,16 @@
     "modulo": {
       "id":2,
       "descricao":"Administrativo"
+    }
+  },
+   {
+    "id": 4,
+    "tipo": "",
+    "acesso": false,
+    "descricao": "",
+    "modulo": {
+      "id":2,
+      "descricao":"Configurações"
     }
   }
 

@@ -1,23 +1,19 @@
-(function ()
-{
-    'use strict';
+(function() {
+  'use strict';
 
-    angular
-        .module('app.cadastros.fornecedores')
-        .controller('UsuarioGerenciamentoController', UsuarioGerenciamentoController);
+  angular
+    .module('app.cadastros.fornecedores')
+    .controller('FornecedorsGerenciamentoController', FornecedorsGerenciamentoController);
 
-    /** @ngInject */
-    function UsuarioGerenciamentoController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
-        ,$mdDialog, $mdMedia,$document, $timeout,Usuarios)
-    {
-        var vm = this ;
+  /** @ngInject */
+  function FornecedorsGerenciamentoController($rootScope, $mdToast, api,
+    $interval, $mdSidenav, $scope, $mdDialog, $mdMedia, $document, $timeout, Fornecedores) {
 
-        vm.path = ["Cadastros de usuários"];
+    var vm = this;
 
-        vm.usuario = Usuarios;
 
-      console.log('modulo UsuarioGerenciamentoController');
-      console.log(Usuarios);
+    vm.fornecedores = Fornecedores;
 
-    }
+
+  }
 })();

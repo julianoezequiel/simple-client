@@ -4,10 +4,10 @@
 
     angular
         .module('app.cadastros.fornecedores')
-        .controller('UsuariosController', usuariosController);
+        .controller('FornecedorController', FornecedorController);
 
     /** @ngInject */
-    function usuariosController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
+    function FornecedorController($rootScope,$mdToast,api, $interval, $mdSidenav,$scope
         ,$mdDialog, $mdMedia,$document, $timeout,Usuarios)
     {
         var vm = this ;
@@ -37,7 +37,7 @@
         }
 
         vm.dtOptions = {
-            'dom'       : '<"top"f>rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
+            'dom'       : '<"top">rt<"bottom"<"left"<"length"l>><"right"<"info"i><"pagination"p>>>',
             'pagingType': 'simple',
             'autoWidth' : false,
             'responsive': true,
