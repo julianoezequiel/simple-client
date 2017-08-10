@@ -24,7 +24,7 @@
         },{
             "descricao":"Fornecedores",
             "icone":"truck",
-            "state": 'app.simple-cadastros-clientes',
+            "state": 'app.simple-cadastros-fornecedores',
         },{
             "descricao":"Vendedores",
             "icone":"wallet-travel",

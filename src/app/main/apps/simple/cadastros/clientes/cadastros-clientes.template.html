@@ -14,7 +14,7 @@
           <md-icon md-font-icon="icon-chevron-right" class="s16 separator"></md-icon>
           <span class="parent">Clientes</span>
         </div>
-        <div class="title">Cadastrar Cliente
+        <div class="title">Clientes
           <md-icon md-font-icon="icon-cart" class="s40"></md-icon>
         </div>
       </div>
@@ -49,6 +49,28 @@
           </md-tooltip>
           <md-icon md-font-icon="icon-printer"></md-icon>
         </md-button>
+        <div class="search" flex flex-offset="15" layout="row" layout-align="start center">
+          <md-button class="md-icon-button" ng-click="">
+            <md-icon md-font-icon="icon-magnify" class="icon search-icon"></md-icon>
+          </md-button>
+          <input class="search-input" ng-model="vm.search" type="text" placeholder="Pesquizar..." translate translate-attr-placeholder="Pesquizar" flex>
+        </div>
+        <md-menu class="search-settings" md-position-mode="target-right target">
+          <md-button class="md-icon-button" ng-click="$mdOpenMenu()" aria-label="Search settings" translate translate-attr-aria-label="SEARCH.SEARCH_SETTINGS">
+            <md-icon md-menu-origin md-menu-align-target md-font-icon="icon-cog" class="icon s16"></md-icon>
+          </md-button>
+          <md-menu-content width="3" class="pl-15">
+            <md-menu-item>
+              <md-checkbox ng-click="vm.toggle(permissao, selected)">
+                Nome
+              </md-checkbox>
+            </md-menu-item>
+            <md-menu-item>
+              <md-checkbox ng-click="vm.toggle(permissao, selected)">
+                CPF/CNPJ
+            </md-menu-item>
+          </md-menu-content>
+        </md-menu>
       </div>
       <!-- / CONTENT TOOLBAR -->
       <!-- CONTENT -->

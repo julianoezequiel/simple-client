@@ -1,21 +1,35 @@
 #cadastros-clientes {
 
-  .add-user-button {
-    position: relative;
-    right: 90%;
-    top: 106px;
-  }
+  >.center>.header {
+    background: transparent;
 
-  .pull-left {
-    float: left !important;
-  }
+    .breadcrumb {
+      margin-bottom: 16px;
+      font-weight: 500;
+      color: rgba(0, 0, 0, 0.54);
 
-  .vertical-divider {
-    border-top-width: 0 !important;
-    border-right-width: 1px !important;
-    border-right-style: solid !important;
-    height: 100% !important;
+      md-icon {
+        margin: 0;
+      }
+
+      .separator {
+        margin: 0 8px;
+      }
+    }
+
+    .title {
+      font-size: 34px;
+    }
   }
+}
+
+.breadcrumb {
+  margin-top: 12px;
+}
+
+
+.content {
+  max-width: 100%;
 }
 
 // RESPONSIVE

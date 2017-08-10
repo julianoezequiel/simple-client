@@ -35,7 +35,7 @@
           "id": 4,
           "tipo": "clientes",
           "acesso": false,
-          "descricao": ""
+          "descricao": "Cadastro vendedores"
         }]
       },
 
@@ -85,25 +85,31 @@
           "id": 1,
           "tipo": "usuarios",
           "acesso": true,
-          "descricao": "Cadastro de usuários"
+          "descricao": "Agrupar itens"
         },
         {
           "id": 2,
           "tipo": "clientes",
           "acesso": false,
-          "descricao": "Cadastro de clientes"
+          "descricao": "Ajuste de estoque"
         },
         {
           "id": 1,
           "tipo": "usuarios",
           "acesso": true,
-          "descricao": "Cadastro de usuários"
+          "descricao": "Entrada de produtos"
         },
         {
           "id": 2,
           "tipo": "clientes",
           "acesso": false,
-          "descricao": "Cadastro de clientes"
+          "descricao": "Etiquetas"
+        },
+        {
+          "id": 2,
+          "tipo": "clientes",
+          "acesso": false,
+          "descricao": "Inventario"
         }]
       },
 
@@ -116,25 +122,25 @@
           "id": 1,
           "tipo": "usuarios",
           "acesso": true,
-          "descricao": "Cadastro de usuários"
+          "descricao": "30 dias sem venda"
         },
         {
           "id": 2,
           "tipo": "clientes",
           "acesso": false,
-          "descricao": "Cadastro de clientes"
+          "descricao": "Ajustes"
         },
         {
           "id": 1,
           "tipo": "usuarios",
           "acesso": true,
-          "descricao": "Cadastro de usuários"
+          "descricao": "Comandas"
         },
         {
           "id": 2,
           "tipo": "clientes",
           "acesso": false,
-          "descricao": "Cadastro de clientes"
+          "descricao": "Comissões"
         }]
       },
 
@@ -147,25 +153,19 @@
           "id": 1,
           "tipo": "usuarios",
           "acesso": true,
-          "descricao": "Cadastro de usuários"
+          "descricao": "Cadastros básicos"
         },
         {
           "id": 2,
           "tipo": "clientes",
           "acesso": false,
-          "descricao": "Cadastro de clientes"
+          "descricao": "Usuários"
         },
         {
           "id": 1,
           "tipo": "usuarios",
           "acesso": true,
-          "descricao": "Cadastro de usuários"
-        },
-        {
-          "id": 2,
-          "tipo": "clientes",
-          "acesso": false,
-          "descricao": "Cadastro de clientes"
+          "descricao": "Sistema"
         }]
       }
     }

@@ -12,7 +12,8 @@
         // ])
         .module('app.simple.cadastros', [         
            'app.cadastros.usuarios',
-           'app.cadastros.clientes'
+           'app.cadastros.clientes',
+           'app.cadastros.fornecedores'
         ])
         .config(config);
 
@@ -26,7 +27,7 @@
             weight: 1,
              hidden: function ()
             {
-                console.log('adicionando menu principal');
+                // console.log('adicionando menu principal');
                 
                 return false;
             }

@@ -18,7 +18,7 @@
       state: 'app.simple-cadastros-usuarios',
       icon: 'icon-account-circle',
       hidden: function() {
-        console.log('adicionando menu');
+        // console.log('adicionando menu');
         // var data  = msApi.resolve('permissao@get',function(data){
         //     var v = data.permissao.filter(function(val){
         //         return val.tipo == 'usuarios'
@@ -36,7 +36,7 @@
       state: 'app.simple-cadastros-clientes',
       icon: 'icon-cart',
       hidden: function() {
-        console.log('adicionando menu');
+        // console.log('adicionando menu');
         // var data  = msApi.resolve('permissao@get',function(data){
         //     var v = data.permissao.filter(function(val){
         //         return val.tipo == 'clientes'
@@ -49,11 +49,11 @@
     });
 
     msNavigationService.saveItem('cadastros.fornecedores', {
-      title: 'Clientes',
-      state: 'app.simple-cadastros-clientes',
-      icon: 'icon-cart',
+      title: 'Fornecedores',
+      state: 'app.simple-cadastros-fornecedores',
+      icon: 'icon-truck',
       hidden: function() {
-        console.log('adicionando menu');
+        // console.log('adicionando menu');
         // var data  = msApi.resolve('permissao@get',function(data){
         //     var v = data.permissao.filter(function(val){
         //         return val.tipo == 'clientes'

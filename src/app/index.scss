@@ -2,6 +2,7 @@
  *  Do not remove this comments bellow. It's the markers used by wiredep to inject
  *  sass dependencies when defined in the bower.json of your dependencies
  */
+
 // bower:scss
 // endbower
 
@@ -9,21 +10,54 @@
  *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
  */
+
 // injector
 // endinjector
-md-toast.md-error-toast-theme div.md-toast-content{
-    color: white !important;
-    background-color: #ef8812 !important;
+md-toast.md-error-toast-theme div.md-toast-content {
+  color: white !important;
+  background-color: #ef8812 !important;
 }
 
-md-toast.md-success-toast-theme div.md-toast-content{
-    color: white !important;
-    background-color: green !important;
+md-toast.md-success-toast-theme div.md-toast-content {
+  color: white !important;
+  background-color: green !important;
 }
 
 .vertical-divider {
-  border-top-width: 0  !important;
+  border-top-width: 0 !important;
   border-right-width: 1px !important;
   border-right-style: solid !important;
   height: 100% !important;
+}
+
+>.center>.header {
+  background: transparent;
+
+  .breadcrumb {
+    margin-bottom: 16px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.54);
+
+    md-icon {
+      margin: 0;
+    }
+
+    .separator {
+      margin: 0 8px;
+    }
+  }
+
+  .title {
+    font-size: 34px;
+  }
+}
+
+
+.content {
+  max-width: 100%;
+}
+
+
+.breadcrumb {
+  margin-top: 12px;
 }
