@@ -8,7 +8,7 @@
   /** @ngInject */
   function UsuarioGerenciamentoController($rootScope, $mdToast, api, $interval,
     $mdSidenav, $scope, $mdDialog, $mdMedia, $document, $timeout,
-    Usuarios, $stateParams, $mdBottomSheet, Permissoes,CadastrosDiversos) {
+    Usuarios, $stateParams, $mdBottomSheet, Permissoes, CadastrosDiversos) {
 
     var vm = this;
 

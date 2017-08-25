@@ -12,7 +12,8 @@
         // ])
          .module('app.simple', [
              'app.simple.painel-controle',
-             'app.simple.cadastros'
+             'app.simple.cadastros',
+             'app.simple.utils'
         ])
         .config(config);
 
